@@ -8,5 +8,5 @@
 
 # Circuit
 
--Sensor DHT11 legat OUT la A0 (placa ATMEGA2560), un GND la - si 5V la +
+-Sensor DHT11 legat OUT la A0 (placa ATMEGA2560), un GND l	a - si 5V la +
 ***
