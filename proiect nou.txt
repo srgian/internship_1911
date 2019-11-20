@@ -1,4 +1,6 @@
 creezi un fisier nou
 dai commit, apoi Push
 
-cand modifici, iei fisierul (pull), modifici, daci commit, apoi push (teoretic ar trebui sa mearga fluid...); vrei sa lucrezi la ceva dai intai push, apoi modifici, commit, push... (sa nu uiti sa pui fisierele in stage..., apoi merge sa dai commit)
+cand modifici, iei fisierul (pull), modifici, daci commit, apoi push (teoretic ar trebui sa mearga fluid...); 
+vrei sa lucrezi la ceva dai intai push, apoi modifici, commit, push...
+ (sa nu uiti sa pui fisierele in stage..., apoi merge sa dai commit)
