@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SmartHome" />
+		<Option pch_mode="2" />
+		<Option compiler="avr-gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/SmartHome.elf" prefix_auto="1" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Debug/" />
+				<Option type="5" />
+				<Option compiler="avr-gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="arduino" />
+				</Compiler>
+				<Linker>
+					<Add directory="arduino" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).hex" />
+					<Add after="avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).eep" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/SmartHome.elf" prefix_auto="1" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="5" />
+				<Option compiler="avr-gcc" />
+				<Compiler>
+					<Add option="-Os" />
+					<Add directory="arduino" />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).hex" />
+					<Add after="avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).eep" />
+					<Add after='&quot;C:\Program Files (x86)\Arduino\hardware\tools\avr\bin\avrdude&quot; -C&quot;C:\Program Files (x86)\Arduino\hardware\tools\avr\etc\avrdude.conf&quot; -v -patmega2560 -cwiring -PCOM9 -b115200 -D -Uflash:w:bin\Release\SmartHome.elf bin\Release\SmartHome.hex' />
+				</ExtraCommands>
+			</Target>
+			<Environment>
+				<Variable name="MCU" value="atmega2560" />
+			</Environment>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-mmcu=atmega2560" />
+			<Add option="-DF_CPU=16000000UL" />
+		</Compiler>
+		<Linker>
+			<Add option="-mmcu=atmega2560" />
+			<Add option="-Wl,-Map=$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).map,--cref" />
+		</Linker>
+		<ExtraCommands>
+			<Add after='cmd /c &quot;avr-objdump -h -S $(TARGET_OUTPUT_FILE) &gt; $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).lss&quot;' />
+			<Add after="avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).hex" />
+			<Add after="avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).eep" />
+			<Add after="avr-objcopy --no-change-warnings -j .lock --change-section-lma .lock=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).lock" />
+			<Add after="avr-objcopy --no-change-warnings -j .signature --change-section-lma .signature=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).sig" />
+			<Add after="avr-objcopy --no-change-warnings -j .fuse --change-section-lma .fuse=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).fuse" />
+		</ExtraCommands>
+		<Unit filename="HWInputs.c">
+			<Option compilerVar="CPP" />
+		</Unit>
+		<Unit filename="HWInputs.h" />
+		<Unit filename="HWOutputs.c">
+			<Option compilerVar="CPP" />
+		</Unit>
+		<Unit filename="Inputs.h" />
+		<Unit filename="Logic.c">
+			<Option compilerVar="CPP" />
+		</Unit>
+		<Unit filename="Logic.h" />
+		<Unit filename="Outputs.h" />
+		<Unit filename="SWInputs.c" />
+		<Unit filename="SWInputs.h" />
+		<Unit filename="SWOutputs.c" />
+		<Unit filename="SWOutputs.h" />
+		<Unit filename="SmartHome.c">
+			<Option compilerVar="CPP" />
+		</Unit>
+		<Unit filename="SmartHome.fuse" />
+		<Unit filename="arduino/Arduino.h" />
+		<Unit filename="arduino/CDC.cpp" />
+		<Unit filename="arduino/Client.h" />
+		<Unit filename="arduino/HardwareSerial.cpp" />
+		<Unit filename="arduino/HardwareSerial.h" />
+		<Unit filename="arduino/HardwareSerial0.cpp" />
+		<Unit filename="arduino/HardwareSerial1.cpp" />
+		<Unit filename="arduino/HardwareSerial2.cpp" />
+		<Unit filename="arduino/HardwareSerial3.cpp" />
+		<Unit filename="arduino/HardwareSerial_private.h" />
+		<Unit filename="arduino/IPAddress.cpp" />
+		<Unit filename="arduino/IPAddress.h" />
+		<Unit filename="arduino/PluggableUSB.cpp" />
+		<Unit filename="arduino/PluggableUSB.h" />
+		<Unit filename="arduino/Print.cpp" />
+		<Unit filename="arduino/Print.h" />
+		<Unit filename="arduino/Printable.h" />
+		<Unit filename="arduino/Server.h" />
+		<Unit filename="arduino/Stream.cpp" />
+		<Unit filename="arduino/Stream.h" />
+		<Unit filename="arduino/Tone.cpp" />
+		<Unit filename="arduino/USBAPI.h" />
+		<Unit filename="arduino/USBCore.cpp" />
+		<Unit filename="arduino/USBCore.h" />
+		<Unit filename="arduino/USBDesc.h" />
+		<Unit filename="arduino/Udp.h" />
+		<Unit filename="arduino/WCharacter.h" />
+		<Unit filename="arduino/WInterrupts.c" />
+		<Unit filename="arduino/WMath.cpp" />
+		<Unit filename="arduino/WString.cpp" />
+		<Unit filename="arduino/WString.h" />
+		<Unit filename="arduino/abi.cpp" />
+		<Unit filename="arduino/binary.h" />
+		<Unit filename="arduino/hooks.c"/>
+		<Unit filename="arduino/main.cpp" />
+		<Unit filename="arduino/new.cpp" />
+		<Unit filename="arduino/new.h" />
+		<Unit filename="arduino/pins_arduino.h" />
+		<Unit filename="arduino/wiring.c" />
+		<Unit filename="arduino/wiring_analog.c" />
+		<Unit filename="arduino/wiring_digital.c" />
+		<Unit filename="arduino/wiring_private.h" />
+		<Unit filename="arduino/wiring_pulse.c" />
+		<Unit filename="arduino/wiring_shift.c" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,60 @@
+# depslib dependency file v1.0
+1574332284 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\logic.cpp
+	<inttypes.h>
+	"Inputs.h"
+	"Outputs.h"
+
+1574330671 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwinputs.h
+	<inttypes.h>
+
+1574331393 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwoutputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574331984 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwinputs.cpp
+	<inttypes.h>
+
+1574332013 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\swinputs.cpp
+	<inttypes.h>
+
+1574332182 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwoutputs.cpp
+	<inttypes.h>
+	<Arduino.h>
+
+1574334588 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\inputs.h
+	<inttypes.h>
+
+1574332537 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574332689 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\swoutputs.cpp
+	<inttypes.h>
+	<stdio.h>
+
+1574332346 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\main.cpp
+	<stdio.h>
+	<time.h>
+	"Logic.h"
+
+1574330390 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\logic.h
+
+1574331984 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwinputs.c
+	<inttypes.h>
+
+1574332182 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574335408 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\logic.c
+	<inttypes.h>
+	"Inputs.h"
+	"Outputs.h"
+
+1574332013 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\swinputs.c
+	<inttypes.h>
+
+1574332689 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
