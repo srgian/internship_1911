@@ -1,4 +1,4 @@
-# Sensor de temperatura/umiditate
+# Senzor de temperatura/umiditate
 
 -Puneti libraria DHT in C:\Program Files (x86)\Arduino\libraries      
 -Compilati programul    

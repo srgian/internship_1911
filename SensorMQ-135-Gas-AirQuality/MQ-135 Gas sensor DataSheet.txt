@@ -1,0 +1,15 @@
+MQ-135 AIR QUALITY
+
+***Suitable for detecting:
+-NH3 (amoniac)
+-NOx (dioxid de hidrogen)
+-alcohol
+-Benzene
+-smoke
+-CO2
+
+***Basic configuration
+-Vcc (+5V)
+-Ground
+-Digital pin
+-Analog pin
