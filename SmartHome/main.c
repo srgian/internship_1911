@@ -1,5 +1,6 @@
 #include <time.h>
 #include "Logic.h"
+#include "Lights.h"
 
 void delay(unsigned int mseconds)
 {
@@ -9,6 +10,8 @@ void delay(unsigned int mseconds)
 
 int main()
 {
+    LightsInit();
+
     for(;;)
     {
         MainFunction();

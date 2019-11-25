@@ -58,3 +58,43 @@
 	<inttypes.h>
 	<stdio.h>
 
+1574690980 source:c:\users\dan.donica\documents\internship\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574687542 source:c:\users\dan.donica\documents\internship\smarthome\logic.c
+	"Logic.h"
+	"Lights.h"
+
+1574691021 c:\users\dan.donica\documents\internship\smarthome\inputs.h
+	<inttypes.h>
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574688168 source:c:\users\dan.donica\documents\internship\smarthome\main.c
+	<time.h>
+	"Logic.h"
+	"Lights.h"
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\logic.h
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\swinputs.c
+	<inttypes.h>
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1574689734 c:\users\dan.donica\documents\internship\smarthome\lights.h
+	<inttypes.h>
+
+1574691097 source:c:\users\dan.donica\documents\internship\smarthome\lights.c
+	"Lights.h"
+	"Inputs.h"
+
