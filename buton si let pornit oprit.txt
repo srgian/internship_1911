@@ -1,0 +1,29 @@
+#define LED 10
+#define Button 12
+#define Button2 13
+int stateB1;
+int stateB2;
+int pvs_state; 
+int led_state=LOW;
+
+void setup() {                
+  pinMode(Button, INPUT); 
+  pinMode(LED, OUTPUT); 
+}
+
+
+void loop() {
+  stateB1 = digitalRead(Button); 
+
+  if(pvs_state==1 && stateB1==0)
+  {
+    if(led_state==LOW)
+    {
+      led_state=HIGH;
+    } else {
+      led_state=LOW;
+    }
+  }
+  pvs_state=stateB1;
+  digitalWrite(LED,led_state);
+  delay(100); }
