@@ -98,3 +98,45 @@
 	"Lights.h"
 	"Inputs.h"
 
+1574705394 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\swinputs.c
+	<inttypes.h>
+
+1574703428 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1574702641 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574702641 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574702641 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\logic.c
+	"Logic.h"
+	"Lights.h"
+
+1574330390 e:\arobs\internship\arobs_1911\internship_1911\smarthome\logic.h
+
+1574706047 e:\arobs\internship\arobs_1911\internship_1911\smarthome\lights.h
+	<inttypes.h>
+
+1574702641 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\main.c
+	<time.h>
+	"Logic.h"
+	"Lights.h"
+
+1574706026 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\lights.c
+	"Lights.h"
+	"Inputs.h"
+	"Outputs.h"
+	<stdio.h>
+
+1574703259 e:\arobs\internship\arobs_1911\internship_1911\smarthome\inputs.h
+	<inttypes.h>
+
+1574702984 e:\arobs\internship\arobs_1911\internship_1911\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
