@@ -34,17 +34,31 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="HWInputs.c" />
+		<Unit filename="HWInputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="HWInputs.h" />
-		<Unit filename="HWOutputs.c" />
+		<Unit filename="HWOutputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="HWOutputs.h" />
 		<Unit filename="Inputs.h" />
-		<Unit filename="Logic.c" />
+		<Unit filename="Lights.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Lights.h" />
+		<Unit filename="Logic.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Logic.h" />
 		<Unit filename="Outputs.h" />
-		<Unit filename="SWInputs.c" />
+		<Unit filename="SWInputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="SWInputs.h" />
-		<Unit filename="SWOutputs.c" />
+		<Unit filename="SWOutputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -1,11 +1,7 @@
-#include <inttypes.h>
-#include "Inputs.h"
-#include "Outputs.h"
-
-uint8_t input=0xaa;
+#include "Logic.h"
+#include "Lights.h"
 
 void MainFunction()
 {
-    ReadInputs(&input);
-    WriteOutputs(&input);
+    LightsMainFunction();
 }
