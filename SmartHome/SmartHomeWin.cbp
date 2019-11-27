@@ -34,6 +34,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Comfort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Comfort.h" />
 		<Unit filename="HWInputs.c">
 			<Option compilerVar="CC" />
 		</Unit>

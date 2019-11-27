@@ -11,3 +11,9 @@ uint8_t SWDigitalRead(uint8_t pin)
     printf("Pin (%d) read value is <0x%02X>\n", pin, val);
     return val;
 }
+
+void SWReadDHT(double *temp, double *humid)
+{
+    *temp=25;
+    *humid=50;
+}

@@ -2,6 +2,16 @@
 #ifndef WIN
 #include <Arduino.h>
 
+void HWPrint(char *str)
+{
+    Serial.println(str);
+}
+
+void HWDPrint(double val)
+{
+    Serial.println(val);
+}
+
 void HWWriteOutputs(uint8_t *val)
 {
     Serial.println(*val);

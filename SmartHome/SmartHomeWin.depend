@@ -140,3 +140,45 @@
 	<Arduino.h>
 	<inttypes.h>
 
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\lights.c
+	"Lights.h"
+	"Inputs.h"
+	"Outputs.h"
+	<stdio.h>
+
+1574755805 c:\users\robert.horja\desktop\proiectprim\smarthome\lights.h
+	<inttypes.h>
+
+1574859059 c:\users\robert.horja\desktop\proiectprim\smarthome\inputs.h
+	<inttypes.h>
+
+1574859287 c:\users\robert.horja\desktop\proiectprim\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\logic.c
+	"Logic.h"
+	"Lights.h"
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\logic.h
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\main.c
+	<time.h>
+	"Logic.h"
+	"Lights.h"
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\swinputs.c
+	<inttypes.h>
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+

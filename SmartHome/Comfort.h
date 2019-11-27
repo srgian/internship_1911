@@ -1,0 +1,3 @@
+void ComfortInit();
+
+void ComfortMainFunction();

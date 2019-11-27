@@ -7,9 +7,15 @@
 			<Cursor1 position="151" topLine="0" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="Outputs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="272" topLine="0" />
+=======
+	<File name="main.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="302" topLine="0" />
+>>>>>>> 75d9ee4ec58ebbe4a18b26ba908472b8904a4dc1
 		</Cursor>
 	</File>
 	<File name="HWInputs.c" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -17,14 +23,33 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="Lights.c" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+=======
+	<File name="HWInputs.c" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Outputs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+>>>>>>> 75d9ee4ec58ebbe4a18b26ba908472b8904a4dc1
 		<Cursor>
 			<Cursor1 position="800" topLine="25" />
 		</Cursor>
 	</File>
+	<File name="HWOutputs.c" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="SWInputs.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="65" topLine="0" />
+			<Cursor1 position="305" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Comfort.c" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Logic.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
