@@ -1,4 +1,5 @@
 #include <inttypes.h>
+#include <stdio.h>
 
 void SWReadInputs(uint8_t *dst)
 {
