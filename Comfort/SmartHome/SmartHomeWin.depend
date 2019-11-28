@@ -1,0 +1,194 @@
+# depslib dependency file v1.0
+1574332284 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\logic.cpp
+	<inttypes.h>
+	"Inputs.h"
+	"Outputs.h"
+
+1574330671 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwinputs.h
+	<inttypes.h>
+
+1574331393 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwoutputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574331984 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwinputs.cpp
+	<inttypes.h>
+
+1574332013 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\swinputs.cpp
+	<inttypes.h>
+
+1574332182 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwoutputs.cpp
+	<inttypes.h>
+	<Arduino.h>
+
+1574334588 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\inputs.h
+	<inttypes.h>
+
+1574332537 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574332689 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\swoutputs.cpp
+	<inttypes.h>
+	<stdio.h>
+
+1574332346 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\main.cpp
+	<stdio.h>
+	<time.h>
+	"Logic.h"
+
+1574330390 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\logic.h
+
+1574331984 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwinputs.c
+	<inttypes.h>
+
+1574332182 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574335408 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\logic.c
+	<inttypes.h>
+	"Inputs.h"
+	"Outputs.h"
+
+1574332013 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\swinputs.c
+	<inttypes.h>
+
+1574332689 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1574863906 source:c:\users\dan.donica\documents\internship\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+	<dht.h>
+
+1574863906 source:c:\users\dan.donica\documents\internship\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574863906 source:c:\users\dan.donica\documents\internship\smarthome\logic.c
+	"Logic.h"
+	"Lights.h"
+	"Comfort.h"
+
+1574863906 c:\users\dan.donica\documents\internship\smarthome\inputs.h
+	<inttypes.h>
+
+1574863906 c:\users\dan.donica\documents\internship\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574688168 source:c:\users\dan.donica\documents\internship\smarthome\main.c
+	<time.h>
+	"Logic.h"
+	"Lights.h"
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\logic.h
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\swinputs.c
+	<inttypes.h>
+
+1574863907 source:c:\users\dan.donica\documents\internship\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1574850200 c:\users\dan.donica\documents\internship\smarthome\lights.h
+	<inttypes.h>
+
+1574850200 source:c:\users\dan.donica\documents\internship\smarthome\lights.c
+	"Lights.h"
+	"Inputs.h"
+	"Outputs.h"
+	<stdio.h>
+
+1574705394 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\swinputs.c
+	<inttypes.h>
+
+1574703428 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1574702641 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574702641 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574702641 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\logic.c
+	"Logic.h"
+	"Lights.h"
+
+1574330390 e:\arobs\internship\arobs_1911\internship_1911\smarthome\logic.h
+
+1574706047 e:\arobs\internship\arobs_1911\internship_1911\smarthome\lights.h
+	<inttypes.h>
+
+1574702641 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\main.c
+	<time.h>
+	"Logic.h"
+	"Lights.h"
+
+1574706026 source:e:\arobs\internship\arobs_1911\internship_1911\smarthome\lights.c
+	"Lights.h"
+	"Inputs.h"
+	"Outputs.h"
+	<stdio.h>
+
+1574703259 e:\arobs\internship\arobs_1911\internship_1911\smarthome\inputs.h
+	<inttypes.h>
+
+1574702984 e:\arobs\internship\arobs_1911\internship_1911\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\lights.c
+	"Lights.h"
+	"Inputs.h"
+	"Outputs.h"
+	<stdio.h>
+
+1574755805 c:\users\robert.horja\desktop\proiectprim\smarthome\lights.h
+	<inttypes.h>
+
+1574859059 c:\users\robert.horja\desktop\proiectprim\smarthome\inputs.h
+	<inttypes.h>
+
+1574859287 c:\users\robert.horja\desktop\proiectprim\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\logic.c
+	"Logic.h"
+	"Lights.h"
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\logic.h
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\main.c
+	<time.h>
+	"Logic.h"
+	"Lights.h"
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\swinputs.c
+	<inttypes.h>
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1574863906 source:c:\users\dan.donica\documents\internship\smarthome\comfort.c
+	"Outputs.h"
+	"Inputs.h"
+
+1574863906 c:\users\dan.donica\documents\internship\smarthome\comfort.h
+

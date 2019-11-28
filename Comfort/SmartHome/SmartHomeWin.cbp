@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SmartHomeWin" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/DebugWin/SmartHomeWin" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/DebugWin/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DWIN" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/ReleaseWin/SmartHomeWin" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/ReleaseWin/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DWIN" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Comfort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Comfort.h" />
+		<Unit filename="HWInputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="HWInputs.h" />
+		<Unit filename="HWOutputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="HWOutputs.h" />
+		<Unit filename="Inputs.h" />
+		<Unit filename="Lights.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Lights.h" />
+		<Unit filename="Logic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Logic.h" />
+		<Unit filename="Outputs.h" />
+		<Unit filename="SWInputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SWInputs.h" />
+		<Unit filename="SWOutputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

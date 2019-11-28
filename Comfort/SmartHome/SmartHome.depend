@@ -1,0 +1,703 @@
+# depslib dependency file v1.0
+1512980082 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\abi.cpp
+	<stdlib.h>
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\cdc.cpp
+	"USBAPI.h"
+	<avr/wdt.h>
+	<util/atomic.h>
+
+1558011136 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\usbapi.h
+	<inttypes.h>
+	<avr/pgmspace.h>
+	<avr/eeprom.h>
+	<avr/interrupt.h>
+	<util/delay.h>
+	"Arduino.h"
+	"USBDesc.h"
+	"USBCore.h"
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\arduino.h
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<math.h>
+	<avr/pgmspace.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	"binary.h"
+	"WCharacter.h"
+	"WString.h"
+	"HardwareSerial.h"
+	"USBAPI.h"
+	"pins_arduino.h"
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\binary.h
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\wcharacter.h
+	<ctype.h>
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\wstring.h
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<avr/pgmspace.h>
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\hardwareserial.h
+	<inttypes.h>
+	"Stream.h"
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\stream.h
+	<inttypes.h>
+	"Print.h"
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\print.h
+	<inttypes.h>
+	<stdio.h>
+	"WString.h"
+	"Printable.h"
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\printable.h
+	<stdlib.h>
+
+1512980082 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\pins_arduino.h
+	<avr/pgmspace.h>
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\usbdesc.h
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\usbcore.h
+	"USBAPI.h"
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\hardwareserial.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<inttypes.h>
+	<util/atomic.h>
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\hardwareserial_private.h
+	"wiring_private.h"
+
+1574327181 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\wiring_private.h
+	<avr/io.h>
+	<avr/interrupt.h>
+	<stdio.h>
+	<stdarg.h>
+	"Arduino.h"
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\hardwareserial0.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\hardwareserial1.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\hardwareserial2.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\hardwareserial3.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1511781662 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\hooks.c
+
+1574322954 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\ipaddress.cpp
+	<Arduino.h>
+	<IPAddress.h>
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\ipaddress.h
+	<stdint.h>
+	"Printable.h"
+	"WString.h"
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\main.cpp
+	<Arduino.h>
+
+1512980082 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\new.cpp
+	<stdlib.h>
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\pluggableusb.cpp
+	"USBAPI.h"
+	"PluggableUSB.h"
+
+1558011122 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\pluggableusb.h
+	"USBAPI.h"
+	<stdint.h>
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\print.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"Arduino.h"
+	"Print.h"
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\stream.cpp
+	"Arduino.h"
+	"Stream.h"
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\tone.cpp
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	"Arduino.h"
+	"pins_arduino.h"
+
+1558011136 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\usbcore.cpp
+	"USBAPI.h"
+	"PluggableUSB.h"
+	<stdlib.h>
+
+1558011136 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\winterrupts.c
+	<inttypes.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	<stdio.h>
+	"wiring_private.h"
+
+1540799928 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\wiring.c
+	"wiring_private.h"
+
+1513583594 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\wiring_analog.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\wiring_digital.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574327660 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\wiring_pulse.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\wiring_shift.c
+	"wiring_private.h"
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\wmath.cpp
+	"stdlib.h"
+
+1558011122 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\arduino\wstring.cpp
+	"WString.h"
+
+1574330585 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\smarthome.cpp
+	<Arduino.h>
+	"Logic.h"
+
+1574330390 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\logic.h
+
+1574331984 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwinputs.c
+	<inttypes.h>
+
+1574332182 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574332284 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\logic.c
+	<inttypes.h>
+	"Inputs.h"
+	"Outputs.h"
+
+1574332476 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\inputs.h
+	<inttypes.h>
+
+1574332537 c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574335295 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\smarthome.c
+	<Arduino.h>
+	"Logic.h"
+
+1574332013 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\swinputs.c
+	<inttypes.h>
+
+1574332689 source:c:\users\srgian.danity\desktop\current_work\smarthome\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\abi.cpp
+	<stdlib.h>
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\cdc.cpp
+	"USBAPI.h"
+	<avr/wdt.h>
+	<util/atomic.h>
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\usbapi.h
+	<inttypes.h>
+	<avr/pgmspace.h>
+	<avr/eeprom.h>
+	<avr/interrupt.h>
+	<util/delay.h>
+	"Arduino.h"
+	"USBDesc.h"
+	"USBCore.h"
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\arduino.h
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<math.h>
+	<avr/pgmspace.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	"binary.h"
+	"WCharacter.h"
+	"WString.h"
+	"HardwareSerial.h"
+	"USBAPI.h"
+	"pins_arduino.h"
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\binary.h
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\wcharacter.h
+	<ctype.h>
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\wstring.h
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<avr/pgmspace.h>
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\hardwareserial.h
+	<inttypes.h>
+	"Stream.h"
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\stream.h
+	<inttypes.h>
+	"Print.h"
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\print.h
+	<inttypes.h>
+	<stdio.h>
+	"WString.h"
+	"Printable.h"
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\printable.h
+	<stdlib.h>
+
+1574433430 c:\users\dan.donica\documents\internship\smarthome\arduino\pins_arduino.h
+	<avr/pgmspace.h>
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\usbdesc.h
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\usbcore.h
+	"USBAPI.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\hardwareserial.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<inttypes.h>
+	<util/atomic.h>
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\hardwareserial_private.h
+	"wiring_private.h"
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\wiring_private.h
+	<avr/io.h>
+	<avr/interrupt.h>
+	<stdio.h>
+	<stdarg.h>
+	"Arduino.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\hardwareserial0.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\hardwareserial1.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\hardwareserial2.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\hardwareserial3.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\hooks.c
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\ipaddress.cpp
+	<Arduino.h>
+	<IPAddress.h>
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\ipaddress.h
+	<stdint.h>
+	"Printable.h"
+	"WString.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\main.cpp
+	<Arduino.h>
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\new.cpp
+	<stdlib.h>
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\pluggableusb.cpp
+	"USBAPI.h"
+	"PluggableUSB.h"
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\arduino\pluggableusb.h
+	"USBAPI.h"
+	<stdint.h>
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\print.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"Arduino.h"
+	"Print.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\stream.cpp
+	"Arduino.h"
+	"Stream.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\tone.cpp
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	"Arduino.h"
+	"pins_arduino.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\usbcore.cpp
+	"USBAPI.h"
+	"PluggableUSB.h"
+	<stdlib.h>
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\winterrupts.c
+	<inttypes.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	<stdio.h>
+	"wiring_private.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\wiring.c
+	"wiring_private.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\wiring_analog.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\wiring_digital.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\wiring_pulse.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\wiring_shift.c
+	"wiring_private.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\wmath.cpp
+	"stdlib.h"
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\arduino\wstring.cpp
+	"WString.h"
+
+1574693421 source:c:\users\dan.donica\documents\internship\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574693138 source:c:\users\dan.donica\documents\internship\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574687542 source:c:\users\dan.donica\documents\internship\smarthome\logic.c
+	"Logic.h"
+	"Lights.h"
+
+1574691960 c:\users\dan.donica\documents\internship\smarthome\inputs.h
+	<inttypes.h>
+
+1574693114 c:\users\dan.donica\documents\internship\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574693315 source:c:\users\dan.donica\documents\internship\smarthome\smarthome.c
+	<Arduino.h>
+	"Logic.h"
+	"Lights.h"
+
+1574415126 c:\users\dan.donica\documents\internship\smarthome\logic.h
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\swinputs.c
+	<inttypes.h>
+
+1574415126 source:c:\users\dan.donica\documents\internship\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1574689734 c:\users\dan.donica\documents\internship\smarthome\lights.h
+	<inttypes.h>
+
+1574693203 source:c:\users\dan.donica\documents\internship\smarthome\lights.c
+	"Lights.h"
+	"Inputs.h"
+	"Outputs.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\abi.cpp
+	<stdlib.h>
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\cdc.cpp
+	"USBAPI.h"
+	<avr/wdt.h>
+	<util/atomic.h>
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\usbapi.h
+	<inttypes.h>
+	<avr/pgmspace.h>
+	<avr/eeprom.h>
+	<avr/interrupt.h>
+	<util/delay.h>
+	"Arduino.h"
+	"USBDesc.h"
+	"USBCore.h"
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\arduino.h
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<math.h>
+	<avr/pgmspace.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	"binary.h"
+	"WCharacter.h"
+	"WString.h"
+	"HardwareSerial.h"
+	"USBAPI.h"
+	"pins_arduino.h"
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\binary.h
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\wcharacter.h
+	<ctype.h>
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\wstring.h
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<avr/pgmspace.h>
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\hardwareserial.h
+	<inttypes.h>
+	"Stream.h"
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\stream.h
+	<inttypes.h>
+	"Print.h"
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\print.h
+	<inttypes.h>
+	<stdio.h>
+	"WString.h"
+	"Printable.h"
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\printable.h
+	<stdlib.h>
+
+1574670488 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\pins_arduino.h
+	<avr/pgmspace.h>
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\usbdesc.h
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\usbcore.h
+	"USBAPI.h"
+
+1574242358 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\dht.cpp
+	"dht.h"
+
+1574242358 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\dht.h
+	"Arduino.h"
+	"WProgram.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\hardwareserial.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<inttypes.h>
+	<util/atomic.h>
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\hardwareserial_private.h
+	"wiring_private.h"
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\wiring_private.h
+	<avr/io.h>
+	<avr/interrupt.h>
+	<stdio.h>
+	<stdarg.h>
+	"Arduino.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\hardwareserial0.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\hardwareserial1.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\hardwareserial2.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\hardwareserial3.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\hooks.c
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\ipaddress.cpp
+	<Arduino.h>
+	<IPAddress.h>
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\ipaddress.h
+	<stdint.h>
+	"Printable.h"
+	"WString.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\main.cpp
+	<Arduino.h>
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\new.cpp
+	<stdlib.h>
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\pluggableusb.cpp
+	"USBAPI.h"
+	"PluggableUSB.h"
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\pluggableusb.h
+	"USBAPI.h"
+	<stdint.h>
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\print.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"Arduino.h"
+	"Print.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\stream.cpp
+	"Arduino.h"
+	"Stream.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\tone.cpp
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	"Arduino.h"
+	"pins_arduino.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\usbcore.cpp
+	"USBAPI.h"
+	"PluggableUSB.h"
+	<stdlib.h>
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\winterrupts.c
+	<inttypes.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	<stdio.h>
+	"wiring_private.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\wiring.c
+	"wiring_private.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\wiring_analog.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\wiring_digital.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\wiring_pulse.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\wiring_shift.c
+	"wiring_private.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\wmath.cpp
+	"stdlib.h"
+
+1574336542 source:c:\users\robert.horja\desktop\proiectprim\smarthome\arduino\wstring.cpp
+	"WString.h"
+
+1574859295 source:c:\users\robert.horja\desktop\proiectprim\smarthome\comfort.c
+	"Outputs.h"
+	"Inputs.h"
+
+1574859287 c:\users\robert.horja\desktop\proiectprim\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574859059 c:\users\robert.horja\desktop\proiectprim\smarthome\inputs.h
+	<inttypes.h>
+
+1574859075 source:c:\users\robert.horja\desktop\proiectprim\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+	<dht.h>
+
+1574859256 source:c:\users\robert.horja\desktop\proiectprim\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574755805 source:c:\users\robert.horja\desktop\proiectprim\smarthome\lights.c
+	"Lights.h"
+	"Inputs.h"
+	"Outputs.h"
+	<stdio.h>
+
+1574755805 c:\users\robert.horja\desktop\proiectprim\smarthome\lights.h
+	<inttypes.h>
+
+1574858456 source:c:\users\robert.horja\desktop\proiectprim\smarthome\logic.c
+	"Logic.h"
+	"Lights.h"
+	"Comfort.h"
+
+1574336542 c:\users\robert.horja\desktop\proiectprim\smarthome\logic.h
+
+1574856703 c:\users\robert.horja\desktop\proiectprim\smarthome\comfort.h
+
+1574858438 source:c:\users\robert.horja\desktop\proiectprim\smarthome\smarthome.c
+	<Arduino.h>
+	"Logic.h"
+	"Lights.h"
+	"Comfort.h"
+
+1574859065 source:c:\users\robert.horja\desktop\proiectprim\smarthome\swinputs.c
+	<inttypes.h>
+
+1574859248 source:c:\users\robert.horja\desktop\proiectprim\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
