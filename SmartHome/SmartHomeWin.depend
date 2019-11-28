@@ -192,3 +192,62 @@
 
 1574863906 c:\users\dan.donica\documents\internship\smarthome\comfort.h
 
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\comfort.c
+	"Outputs.h"
+	"Inputs.h"
+
+1574925540 c:\users\oana.miron\documents\internship_1911\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574925540 c:\users\oana.miron\documents\internship_1911\smarthome\inputs.h
+	<inttypes.h>
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+	<dht.h>
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574849032 source:c:\users\oana.miron\documents\internship_1911\smarthome\lights.c
+	"Lights.h"
+	"Inputs.h"
+	"Outputs.h"
+	<stdio.h>
+
+1574849032 c:\users\oana.miron\documents\internship_1911\smarthome\lights.h
+	<inttypes.h>
+
+1574931182 source:c:\users\oana.miron\documents\internship_1911\smarthome\logic.c
+	"Logic.h"
+	"Lights.h"
+	"Comfort.h"
+	"Security.h"
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\logic.h
+
+1574925540 c:\users\oana.miron\documents\internship_1911\smarthome\comfort.h
+
+1574931845 c:\users\oana.miron\documents\internship_1911\smarthome\security.h
+
+1574849032 source:c:\users\oana.miron\documents\internship_1911\smarthome\main.c
+	<time.h>
+	"Logic.h"
+	"Lights.h"
+
+1574931845 source:c:\users\oana.miron\documents\internship_1911\smarthome\security.c
+	"Security.h"
+	"Inputs.h"
+	"Outputs.h"
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\swinputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+

@@ -63,6 +63,10 @@
 		<Unit filename="SWOutputs.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Security.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Security.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

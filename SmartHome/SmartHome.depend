@@ -701,3 +701,276 @@
 	<inttypes.h>
 	<stdio.h>
 
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\abi.cpp
+	<stdlib.h>
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\cdc.cpp
+	"USBAPI.h"
+	<avr/wdt.h>
+	<util/atomic.h>
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\usbapi.h
+	<inttypes.h>
+	<avr/pgmspace.h>
+	<avr/eeprom.h>
+	<avr/interrupt.h>
+	<util/delay.h>
+	"Arduino.h"
+	"USBDesc.h"
+	"USBCore.h"
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\arduino.h
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<math.h>
+	<avr/pgmspace.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	"binary.h"
+	"WCharacter.h"
+	"WString.h"
+	"HardwareSerial.h"
+	"USBAPI.h"
+	"pins_arduino.h"
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\binary.h
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\wcharacter.h
+	<ctype.h>
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\wstring.h
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<avr/pgmspace.h>
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\hardwareserial.h
+	<inttypes.h>
+	"Stream.h"
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\stream.h
+	<inttypes.h>
+	"Print.h"
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\print.h
+	<inttypes.h>
+	<stdio.h>
+	"WString.h"
+	"Printable.h"
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\printable.h
+	<stdlib.h>
+
+1574673508 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\pins_arduino.h
+	<avr/pgmspace.h>
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\usbdesc.h
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\usbcore.h
+	"USBAPI.h"
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\dht.cpp
+	"dht.h"
+
+1574925540 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\dht.h
+	"Arduino.h"
+	"WProgram.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\hardwareserial.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<inttypes.h>
+	<util/atomic.h>
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\hardwareserial_private.h
+	"wiring_private.h"
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\wiring_private.h
+	<avr/io.h>
+	<avr/interrupt.h>
+	<stdio.h>
+	<stdarg.h>
+	"Arduino.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\hardwareserial0.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\hardwareserial1.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\hardwareserial2.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\hardwareserial3.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\hooks.c
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\ipaddress.cpp
+	<Arduino.h>
+	<IPAddress.h>
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\ipaddress.h
+	<stdint.h>
+	"Printable.h"
+	"WString.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\main.cpp
+	<Arduino.h>
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\new.cpp
+	<stdlib.h>
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\pluggableusb.cpp
+	"USBAPI.h"
+	"PluggableUSB.h"
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\pluggableusb.h
+	"USBAPI.h"
+	<stdint.h>
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\print.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"Arduino.h"
+	"Print.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\stream.cpp
+	"Arduino.h"
+	"Stream.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\tone.cpp
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	"Arduino.h"
+	"pins_arduino.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\usbcore.cpp
+	"USBAPI.h"
+	"PluggableUSB.h"
+	<stdlib.h>
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\winterrupts.c
+	<inttypes.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	<stdio.h>
+	"wiring_private.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\wiring.c
+	"wiring_private.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\wiring_analog.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\wiring_digital.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\wiring_pulse.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\wiring_shift.c
+	"wiring_private.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\wmath.cpp
+	"stdlib.h"
+
+1574419997 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\wstring.cpp
+	"WString.h"
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\comfort.c
+	"Outputs.h"
+	"Inputs.h"
+
+1574925540 c:\users\oana.miron\documents\internship_1911\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574925540 c:\users\oana.miron\documents\internship_1911\smarthome\inputs.h
+	<inttypes.h>
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+	<dht.h>
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574937141 source:c:\users\oana.miron\documents\internship_1911\smarthome\lights.c
+	"Lights.h"
+	"Inputs.h"
+	"Outputs.h"
+	<stdio.h>
+	<inttypes.h>
+
+1574849032 c:\users\oana.miron\documents\internship_1911\smarthome\lights.h
+	<inttypes.h>
+
+1574949137 source:c:\users\oana.miron\documents\internship_1911\smarthome\logic.c
+	"Logic.h"
+	"Lights.h"
+	"Comfort.h"
+	"Security.h"
+
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\logic.h
+
+1574925540 c:\users\oana.miron\documents\internship_1911\smarthome\comfort.h
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\smarthome.c
+	<Arduino.h>
+	"Logic.h"
+	"Lights.h"
+	"Comfort.h"
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\swinputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1574949197 c:\users\oana.miron\documents\internship_1911\smarthome\security.h
+	<inttypes.h>
+
+1536855856 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\key.cpp
+	<Key.h>
+
+1556640237 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\key.h
+	<Arduino.h>
+
+1536855856 source:c:\users\oana.miron\documents\internship_1911\smarthome\arduino\keypad.cpp
+	<Keypad.h>
+
+1536855856 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\keypad.h
+	"Key.h"
+
+1574949155 source:c:\users\oana.miron\documents\internship_1911\smarthome\security.c
+	"Security.h"
+	"Inputs.h"
+	"Outputs.h"
+	"Keypad.h"
+
+1574925540 c:\users\oana.miron\documents\internship_1911\smarthome\keypad.h
+

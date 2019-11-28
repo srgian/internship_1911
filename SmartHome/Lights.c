@@ -2,6 +2,7 @@
 #include "Inputs.h"
 #include "Outputs.h"
 #include <stdio.h>
+#include <inttypes.h>
 
 #define NULL_PTR 0U
 
