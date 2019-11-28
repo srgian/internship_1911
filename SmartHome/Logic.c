@@ -7,5 +7,5 @@ void MainFunction()
 {
     LightsMainFunction();
     ComfortMainFunction();
-   // SecurityMainFunction();
+    SecurityMainFunction();
 }

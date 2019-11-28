@@ -90,7 +90,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Security.c">
-			<Option compilerVar="CC" />
+			<Option compilerVar="CPP" />
 		</Unit>
 		<Unit filename="Security.h" />
 		<Unit filename="SmartHome.c">
@@ -109,6 +109,10 @@
 		<Unit filename="arduino/HardwareSerial_private.h" />
 		<Unit filename="arduino/IPAddress.cpp" />
 		<Unit filename="arduino/IPAddress.h" />
+		<Unit filename="arduino/Key.cpp" />
+		<Unit filename="arduino/Key.h" />
+		<Unit filename="arduino/Keypad.cpp" />
+		<Unit filename="arduino/Keypad.h" />
 		<Unit filename="arduino/PluggableUSB.cpp" />
 		<Unit filename="arduino/PluggableUSB.h" />
 		<Unit filename="arduino/Print.cpp" />

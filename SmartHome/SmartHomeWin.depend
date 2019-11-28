@@ -212,16 +212,17 @@
 	<inttypes.h>
 	<Arduino.h>
 
-1574849032 source:c:\users\oana.miron\documents\internship_1911\smarthome\lights.c
+1574937141 source:c:\users\oana.miron\documents\internship_1911\smarthome\lights.c
 	"Lights.h"
 	"Inputs.h"
 	"Outputs.h"
 	<stdio.h>
+	<inttypes.h>
 
 1574849032 c:\users\oana.miron\documents\internship_1911\smarthome\lights.h
 	<inttypes.h>
 
-1574931182 source:c:\users\oana.miron\documents\internship_1911\smarthome\logic.c
+1574949137 source:c:\users\oana.miron\documents\internship_1911\smarthome\logic.c
 	"Logic.h"
 	"Lights.h"
 	"Comfort.h"
@@ -231,7 +232,8 @@
 
 1574925540 c:\users\oana.miron\documents\internship_1911\smarthome\comfort.h
 
-1574931845 c:\users\oana.miron\documents\internship_1911\smarthome\security.h
+1574950362 c:\users\oana.miron\documents\internship_1911\smarthome\security.h
+	<inttypes.h>
 
 1574849032 source:c:\users\oana.miron\documents\internship_1911\smarthome\main.c
 	<time.h>
