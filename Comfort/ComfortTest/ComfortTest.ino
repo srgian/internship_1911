@@ -41,10 +41,13 @@ void loop()
 
   Serial.print("Humidity: ");
   Serial.print(DHT.humidity);
-  Serial.print("%  \n");
+  Serial.print("%\n");
   Serial.print("Temperature: ");
   Serial.print(DHT.temperature);
-  Serial.println("C  \n");
+  Serial.print("°C; ");
+
+  Serial.print(DHT.temperature * 1.8 + 32);
+  Serial.println("°F\n");
   
   Serial.println("\n");
   delay(2000);
