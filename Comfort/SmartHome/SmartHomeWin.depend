@@ -192,3 +192,50 @@
 
 1574863906 c:\users\dan.donica\documents\internship\smarthome\comfort.h
 
+1575288127 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+	<dht.h>
+
+1574955882 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1574955882 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\lights.c
+	"Lights.h"
+	"Inputs.h"
+	"Outputs.h"
+	<stdio.h>
+
+1574955882 c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\lights.h
+	<inttypes.h>
+
+1575287161 c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\inputs.h
+	<inttypes.h>
+
+1575288524 c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574955882 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\logic.c
+	"Logic.h"
+	"Lights.h"
+	"Comfort.h"
+
+1574955882 c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\logic.h
+
+1574955882 c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\comfort.h
+
+1574955882 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\main.c
+	<time.h>
+	"Logic.h"
+	"Lights.h"
+
+1575288262 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\swinputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1574955882 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
