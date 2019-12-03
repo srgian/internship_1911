@@ -3,13 +3,12 @@
 #include "Inputs.h"
 #include "Outputs.h"
 
-Servo myservo;  // create servo object to control a servo
-// twelve servo objects can be created on most boards
+Servo myservo;  // creaza un obiect numit myservo
 
 uint8_t lock;
 
 void Doorlock() {
-  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+  myservo.attach(9);  // atasam pinul 9 la outputul de la servo
   Serial.begin(9600);
 }
 
@@ -17,14 +16,14 @@ void DoorLockMainFunction(){
 	 if( Serial.available()>0){
 		 lock=Serial.read();
 	 }
-	 
-	 if(lock==false){
-		 myservo.write(5);  // Unlock position in my case modify according to yours
-		 delay(1500);  // Time to stay on line for servo to arrive its position.(Not Much Necessary)
+
+	 if(lock=='0'){
+		 myservo.write(5);  // deschide poarta
+		 delay(1500);
 	 }
-	 
-	 if(lock==true){
-		 myservo.write(55);  // lock position in my case modify according to yours
+
+	 if(lock=='1'){
+		 myservo.write(55);  // inchide poarta
 		 delay(1500);  // Time to stay on line for servo to arrive its position.(Not Much Necessary)
 	 }
 }

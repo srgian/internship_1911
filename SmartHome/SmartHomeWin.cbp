@@ -38,6 +38,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Comfort.h" />
+		<Unit filename="DoorLock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="DoorLock.h" />
 		<Unit filename="HWInputs.c">
 			<Option compilerVar="CC" />
 		</Unit>

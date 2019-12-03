@@ -2,7 +2,7 @@
 #include "Logic.h"
 #include "Lights.h"
 #include "Comfort.h"
-
+#include "DoorLock.h"
 
 void setup()
 {
