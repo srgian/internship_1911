@@ -8,7 +8,7 @@ int buttonDown = 4; //digital pin 4
 int buttonDownState = 0;
 
 int incrementState = 0; //increment 1000 times this value...
-int delayMilliseconds = 1000; //delay for 'void loop'
+int delayMilliseconds = 10; //delay for 'void loop'
 
 int previousStateButtonUp, previousStateButtonDown;
 
@@ -22,7 +22,7 @@ int regPotentiometer;
 
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   pinMode(buttonUp, INPUT);
   pinMode(buttonDown, INPUT);
@@ -32,75 +32,71 @@ void setup()
 }
 void loop()
 {
-  Serial.println("***loading***");
-  //detect alcohol - MQ135
-  valueMQ135 = analogRead(A0);
-  Serial.print("Alcohol level: ");
-  Serial.print(valueMQ135);
-  if (valueMQ135 > 220)
+  if (incrementState % 5000  == 0)
   {
-    Serial.println(" - Alert!\n");
+    Serial.println("***loading***");
+    //detect alcohol - MQ135
+    valueMQ135 = analogRead(A0);
+    Serial.print("Alcohol level: ");
+    Serial.print(valueMQ135);
+    if (valueMQ135 > 220)
+    {
+      Serial.println(" - Alert!\n");
+    }
+    else {
+      Serial.println(" - Normal\n");
+    }
+
+  
+    //detect CO2 - MQ135
+    Serial.print("CO2: ");
+    Serial.print(valueMQ135);
+    Serial.println("ppm <parts-per-million>\n");
+  
+    //detect gas metane - MQ4
+    valueMQ4 = analogRead(A2);
+    Serial.print("Gas methane: ");
+    Serial.print(valueMQ4);
+    Serial.println("ppm <parts-per-million>\n");
   }
-  else {
-    Serial.println(" - Normal\n");
-  }
-
-  //detect CO2 - MQ135
-  Serial.print("CO2: ");
-  Serial.print(valueMQ135);
-  Serial.println("ppm <parts-per-million>\n");
-
-  //detect gas metane - MQ4
-  valueMQ4 = analogRead(A2);
-  Serial.print("Gas methane: ");
-  Serial.print(valueMQ4);
-  Serial.println("ppm <parts-per-million>\n");
-
-  //humidity & temperature
-  DHT.read11(dht_apin);
-
+  
   //read analog regPotentiometer
   regPotentiometer = analogRead(A6);
-  regPotentiometer = map(regPotentiometer, 0, 1023, 0, 40);
-
-  //read the state of the pushButton value
-  buttonUpState = digitalRead(buttonUp);
-  buttonDownState = digitalRead(buttonDown);
 
   //after each 2 seconds...
-  if (incrementState % 2000  == 0) {
+  if (incrementState % 2000  == 0) 
+  {
     Serial.println("***temperature loading***");
+    DHT.read11(dht_apin);
+    normalTemperature();
+  }
+  
+  if (incrementState % 50  == 0) 
+  {
+    buttonUpState = digitalRead(buttonUp);
+    buttonDownState = digitalRead(buttonDown);
+    
     if (buttonDownState == HIGH && previousStateButtonDown == 0)
     {
       Serial.println("PushDown button activated");
-
       DownTemperature();
-      //buttonDownState = LOW;
     }
     else if (buttonUpState == HIGH && previousStateButtonUp == 0)
     {
       Serial.println("PushUp button activated");
-
       UpTemperature();
-      //buttonUpState = LOW;
 
     }
-    else {
-      normalTemperature();
-    }
+     
+    previousStateButtonUp = buttonUpState;
+    previousStateButtonDown = buttonDownState;
   }
 
-  
-  previousStateButtonUp = buttonUpState;
-  previousStateButtonDown = buttonDownState;
-
-  Serial.println("\n");
-
   delay(delayMilliseconds);
-    incrementState = incrementState + 1000;
-    if (incrementState == 10000) {
-      incrementState = 0;
-    }
+  incrementState = incrementState + 10;
+  if (incrementState == 10000) {
+    incrementState = 0;
+  }
 }
 
 int normalTemperature() {
@@ -108,37 +104,37 @@ int normalTemperature() {
   Serial.print(DHT.humidity);
   Serial.print("%\n");
   Serial.print("Temperature: ");
-  fahrenheitTemperature = (regPotentiometer * 1.8 + 32) + 1;
+  regPotentiometer = map(regPotentiometer, 0, 1023, 0, 40);
 
-  if (regPotentiometer >= 35 && fahrenheitTemperature >= 95) {
+  if (desiredTemperature >= 35 && fahrenheitTemperature >= 95) {
     Serial.println("Maxim point! 35°C | 95°F");
-
+    
   }
-  else if (regPotentiometer <= 9 && fahrenheitTemperature <= 48.2) {
+  else if (desiredTemperature <= 9 && fahrenheitTemperature <= 48.2) {
     Serial.println("Minim point! 9°C | 48.2°F");
-
+    
   } else {
     //Serial.print(DHT.temperature);
-    Serial.print(regPotentiometer);
+    Serial.print(desiredTemperature);
     Serial.print("°C; ");
     //Serial.print(DHT.temperature * 1.8 + 32);
-    Serial.print(regPotentiometer * 1.8 + 32);
+    Serial.print(desiredTemperature * 1.8 + 32);
     Serial.println("°F\n");
   }
 }
 
 int UpTemperature() {
 
-  regPotentiometer++;
-  fahrenheitTemperature = (regPotentiometer * 1.8 + 32) + 1;
+  desiredTemperature++;
+  fahrenheitTemperature = (desiredTemperature * 1.8 + 32) + 1;
 
   //maxim point
-  if (regPotentiometer >= 35 && fahrenheitTemperature >= 95) {
+  if (desiredTemperature >= 35 && fahrenheitTemperature >= 95) {
     Serial.println("Maxim point! 35°C | 95°F");
   }
   else {
     Serial.print("Set new Temperature: ");
-    Serial.print(regPotentiometer);
+    Serial.print(desiredTemperature);
     Serial.print("°C; ");
     Serial.print(fahrenheitTemperature);
     Serial.println("°F\n");
@@ -147,16 +143,16 @@ int UpTemperature() {
 
 int DownTemperature() {
 
-  regPotentiometer--;
-  fahrenheitTemperature = (regPotentiometer * 1.8 + 32) - 1;
+  desiredTemperature--;
+  fahrenheitTemperature = (desiredTemperature * 1.8 + 32) - 1;
 
   //minim point
-  if (regPotentiometer <= 9 && fahrenheitTemperature >= 48.2) {
+  if (desiredTemperature <= 9 && fahrenheitTemperature >= 48.2) {
     Serial.println("Minim point! 9°C | 48.2°F");
   }
   else {
     Serial.print("Set new Temperature: ");
-    Serial.print(regPotentiometer);
+    Serial.print(desiredTemperature);
     Serial.print("°C; ");
     Serial.print(fahrenheitTemperature);
     Serial.println("°F\n");
