@@ -1,5 +1,5 @@
-#define outputCLK 6
-#define outputDT 7
+#define outputCLK 3
+#define outputDT 4
 #define pushButton 5
 
 int counter = 24;
