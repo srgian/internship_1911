@@ -18,8 +18,6 @@ int desiredTemperature, fahrenheitTemperature;
 
 uint8_t valueMQ135, valueMQ4;
 
-int regPotentiometer;
-
 void setup()
 {
   Serial.begin(115200);
@@ -104,7 +102,6 @@ int normalTemperature() {
   Serial.print(DHT.humidity);
   Serial.print("%\n");
   Serial.print("Temperature: ");
-  regPotentiometer = map(regPotentiometer, 0, 1023, 0, 40);
 
   if (desiredTemperature >= 35 && fahrenheitTemperature >= 95) {
     Serial.println("Maxim point! 35°C | 95°F");
