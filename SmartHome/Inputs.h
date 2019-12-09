@@ -2,11 +2,13 @@
 #define HWINPUTS_H
 
 #include <inttypes.h>
-
+#include "Keypad.h"
 #ifndef WIN
+
 #define ReadInputs HWReadInputs
 #define digitalPinRead HWDigitalRead
 #define ReadDHT HWReadDHT
+
 #else
 #define ReadInputs SWReadInputs
 #define digitalPinRead SWDigitalRead
@@ -21,5 +23,13 @@ void HWReadInputs(uint8_t *dst);
 
 void SWReadDHT(double *temp, double *humid);
 void HWReadDHT(double *temp, double *humid);
+
+
+void checkPassword();
+void keypadEvent(KeypadEvent eKey);
+
+extern Keypad keypad;
+
+
 
 #endif // HWINPUTS_H

@@ -113,6 +113,10 @@
 		<Unit filename="arduino/Key.h" />
 		<Unit filename="arduino/Keypad.cpp" />
 		<Unit filename="arduino/Keypad.h" />
+		<Unit filename="arduino/LiquidCrystal_I2C.cpp" />
+		<Unit filename="arduino/LiquidCrystal_I2C.h" />
+		<Unit filename="arduino/Password.cpp" />
+		<Unit filename="arduino/Password.h" />
 		<Unit filename="arduino/PluggableUSB.cpp" />
 		<Unit filename="arduino/PluggableUSB.h" />
 		<Unit filename="arduino/Print.cpp" />
@@ -134,6 +138,8 @@
 		<Unit filename="arduino/WMath.cpp" />
 		<Unit filename="arduino/WString.cpp" />
 		<Unit filename="arduino/WString.h" />
+		<Unit filename="arduino/Wire.cpp" />
+		<Unit filename="arduino/Wire.h" />
 		<Unit filename="arduino/abi.cpp" />
 		<Unit filename="arduino/binary.h" />
 		<Unit filename="arduino/dht.cpp" />
@@ -145,6 +151,10 @@
 		<Unit filename="arduino/new.cpp" />
 		<Unit filename="arduino/new.h" />
 		<Unit filename="arduino/pins_arduino.h" />
+		<Unit filename="arduino/utility/twi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="arduino/utility/twi.h" />
 		<Unit filename="arduino/wiring.c">
 			<Option compilerVar="CC" />
 		</Unit>

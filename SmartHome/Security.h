@@ -5,10 +5,8 @@
 
 void SecurityInit();
 void SecurityMainFunction();
-//void citestefisierparole();
 
 
 
-#define kgetS(w,x,y,z)  kgets(w,(sizeof(w)-1),y,z)*/
 
 #endif

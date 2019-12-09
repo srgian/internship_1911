@@ -2,6 +2,7 @@
 #include "Logic.h"
 #include "Lights.h"
 #include "Comfort.h"
+#include "Security.h"
 
 
 void setup()
@@ -9,11 +10,12 @@ void setup()
     Serial.begin(9600);
     LightsInit();
     ComfortInit();
+    SecurityInit();
 }
 
 void loop()
 {
 
     MainFunction();
-    delay(500);
+    //delay(500);
 }

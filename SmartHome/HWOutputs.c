@@ -26,4 +26,5 @@ void HWDigitalWrite(uint8_t pin, uint8_t val)
 {
     digitalWrite(pin, val);
 }
+
 #endif // WIN
