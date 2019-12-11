@@ -2,6 +2,8 @@
 #define joyPinX A0
 #define joyPinY A1
 #define soilHumidity A7
+#define infraPin 3
+
 #include "dht.h"
 
 //temperature
@@ -23,6 +25,9 @@ int buttonLastState;
 int readHumiditySoil;
 int humidityPercentSoil;
 
+int infraVal = 0;
+bool motionState = false; // We start with no motion detected.
+
 void setup() {
   lcd.init();
   lcd.setBacklight(HIGH);
@@ -34,6 +39,12 @@ void setup() {
 }
 
 void loop() {
+  infraVal = digitalRead(infraPin);
+  if (infraVal == HIGH){
+    lcd.setBacklight(HIGH);
+  } else {
+    lcd.setBacklight(LOW);
+  }
 
   if (analogRead(joyPinX) >= 600) { //UP
     lcd.clear();
@@ -43,6 +54,7 @@ void loop() {
     lcd.setCursor(0, 1);
     lcd.print(valueMQ4);
     lcd.print("ppm");
+
   }
   else if (analogRead(joyPinX) <= 512) { //DOWN
     lcd.clear();
@@ -51,6 +63,7 @@ void loop() {
     lcd.print("Alcohol level: ");
     lcd.setCursor(0, 1);
 
+    //value of CO2 in ppm (parts per million)
     lcd.print(valueMQ135);
     if (valueMQ135 > 450)
     {
@@ -80,19 +93,23 @@ void loop() {
     humidityPercentSoil = map(readHumiditySoil, 1023, 0, 0, 100); //transform data in percent
 
     lcd.setCursor(0, 0);
-    lcd.print("Humidity: ");
-    //    if (humidityPercentSoil == 100)
-    //      lcd.print(" ");
-
+    lcd.print("Soli state: ");
     lcd.print(humidityPercentSoil);
     lcd.print("%");
-    
+
     if (humidityPercentSoil < 10) {
       lcd.setCursor(0, 1);
-      lcd.print("Uda gradina!!!");
+      lcd.print("Wet the soil!");
+    } else if (humidityPercentSoil == 50) {
+      lcd.setCursor(0, 1);
+      lcd.print("Poor humidity");
+    } else if (humidityPercentSoil >= 50) {
+      lcd.setCursor(0, 1);
+      lcd.print("Good humidity");
+    } else if (humidityPercentSoil == 100) {
+      lcd.setCursor(0, 1);
+      lcd.print("Too higher...");
     }
-
   }
-
 
 }
