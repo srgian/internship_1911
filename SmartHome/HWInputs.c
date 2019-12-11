@@ -12,7 +12,8 @@
 #define inputPin 11
 uint8_t pirState = LOW;
 uint8_t val = 0;
-
+uint8_t counter = 1500;
+bool motionStatus;
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 
 Password password = Password( "1564" );
@@ -58,56 +59,119 @@ void checkPassword()
 {
     if (password.evaluate())
     {
-      digitalWrite(buzzer, HIGH);
-      lcd.clear();
-      lcd.blink_off();
-      lcd.cursor_off();
-      lcd.print("Success");
-      delay(1000);
-      val == LOW;
-     digitalWrite(buzzer,HIGH);
-      lcd.clear();
-        //Add code to run if it works
+        digitalWrite(buzzer, HIGH);
+        lcd.clear();
+        lcd.blink_off();
+        lcd.cursor_off();
+        lcd.print("Success");
+        delay(1000);
+        pirState = HIGH;
+        digitalWrite(buzzer, HIGH);
+        lcd.clear();
+        delay(1000);
+        lcd.noBacklight();
     }
     else
     {
-           analogWrite(buzzer, 250);
-      lcd.clear();
-      lcd.blink_off();
-      lcd.cursor_off();
-      lcd.print("Wrong");
-      delay(1000);
-      lcd.clear();
-      lcd.print("Enter code:");
-      lcd.setCursor(0, 1);
-        //add code to run if it did not work
+        lcd.backlight();
+        analogWrite(buzzer, 250);
+        lcd.clear();
+        lcd.blink_off();
+        lcd.cursor_off();
+        lcd.print("Wrong");
+        delay(1000);
+        analogWrite(pirState, 0);// read input value
+        lcd.clear();
+        lcd.backlight();
+        lcd.print("Enter code:");
+        lcd.setCursor(0, 1);
+    }
+}
+void motion_detection()
+{
+
+    val = digitalRead(inputPin);  // read input value
+    if (val == HIGH)              // check if the input is HIGH
+    {
+
+        if (pirState == LOW)
+        {
+            // we have just turned on
+            Serial.println("Motion detected!");
+            motionStatus = true;
+            pirState = HIGH;
+        }
     }
 }
 
+void disarmed()
+{
 
+    if (password.evaluate())
+    {
+        lcd.backlight();
+        lcd.clear();
+        lcd.setCursor(1, 0);
+        lcd.print("Sistem Disarmed");
+        delay(2000);
+        lcd.noBacklight();
+    }
+    pirState = HIGH;
+
+    lcd.noBacklight();
+}
+void armed()
+{
+
+    if (password.evaluate())
+    {
+        lcd.backlight();
+        lcd.clear();
+        lcd.setCursor(1, 0);
+        lcd.print("Sistem Armed");
+        delay(2000);
+        lcd.noBacklight();
+    }
+    delay(10000);
+    pirState = LOW;
+
+    lcd.noBacklight();
+}
 void keypadEvent(KeypadEvent eKey)
 {
     switch (keypad.getState())
     {
     case PRESSED:
+    {
         lcd.blink_on();
         lcd.cursor_on();
         lcd.print(eKey);
         Serial.println(eKey);
-        switch (eKey)
-        {
-        case '*':
-            checkPassword();
-            password.reset();
-            break;
-        case 'C':
-            lcd.clear();
-            lcd.print("Enter code:");
-            lcd.setCursor(0, 1);
-            break;
-        default:
-            password.append(eKey);
-        }
+    }
+    switch (eKey)
+    {
+    case '#':
+        checkPassword();
+        armed();
+        password.reset();
+        break;
+    case '*':
+        checkPassword();
+        disarmed();
+        password.reset();
+        motionStatus = false;
+        break;
+    case 'C':
+        lcd.clear();
+        lcd.backlight();
+        password.reset();
+        lcd.print("Enter code:");
+        lcd.setCursor(0, 1);
+        break;
+    default:
+        password.append(eKey);
+
+    }
     }
 }
 

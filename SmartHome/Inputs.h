@@ -15,6 +15,11 @@
 #define ReadDHT SWReadDHT
 #endif // WIN
 
+extern uint8_t pirState;
+extern uint8_t val;
+extern uint8_t counter;
+extern bool motionStatus;
+
 uint8_t SWDigitalRead(uint8_t pin);
 uint8_t HWDigitalRead(uint8_t pin);
 
@@ -27,6 +32,9 @@ void HWReadDHT(double *temp, double *humid);
 
 void checkPassword();
 void keypadEvent(KeypadEvent eKey);
+void motion_detection();
+void armed();
+void disarmed();
 
 extern Keypad keypad;
 
