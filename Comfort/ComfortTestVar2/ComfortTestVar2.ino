@@ -67,6 +67,7 @@ void loop() {
   }
   else if (joyX <= 512) { //DOWN
     joystick = joystick | JOYSTICK_DOWN;
+    
     //detect alcohol - MQ135
     Serial.println("|||Joystick DOWN|||");
     valueMQ135 = analogRead(A3);
@@ -132,10 +133,15 @@ void loop() {
   }
   else if (joyY <= 400) {
     joystick = joystick | JOYSTICK_LEFT;
-    Serial.println("|||Joystick LEFT|||");
-    Serial.println("Altitude | Pressure\n\n");
+    //Serial.println("|||Joystick LEFT|||");
+    //Serial.println("Altitude | Pressure\n\n");
   }
-
+  
+  if((joystick == JOYSTICK_LEFT) && (oldJoystick  == 0))
+  {
+      Serial.println("Joystick stanga");
+  }
+  
   if(joystick != oldJoystick)
   {
     Serial.print("Joystick: ");

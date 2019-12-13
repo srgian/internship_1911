@@ -4,6 +4,12 @@
 #define soilHumidity A7
 #define infraPin 3
 
+//Define Joystick keys
+#define JOYSTICK_UP       B00000001
+#define JOYSTICK_DOWN     B00000010
+#define JOYSTICK_LEFT     B00000100
+#define JOYSTICK_RIGHT    B00001000
+
 #include "dht.h"
 
 //temperature
@@ -12,7 +18,7 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-LiquidCrystal_I2C lcd(0x27, 20, 4);
+LiquidCrystal_I2C lcd(0x27, 20, 4); //lcd object
 
 int desiredTemperature = 25, fahrenheitTemperature;
 int valueMQ4, valueMQ135;
@@ -26,9 +32,10 @@ int readHumiditySoil;
 int humidityPercentSoil;
 
 int infraVal = 0;
-bool motionState = false; // We start with no motion detected.
+bool motionState = false; // we start with no motion detected
 
 void setup() {
+
   lcd.init();
   lcd.setBacklight(HIGH);
 
@@ -36,17 +43,44 @@ void setup() {
   digitalWrite(joyButton, HIGH);
 
   buttonLastState = digitalRead(joyButton);
+  Serial.begin(9600);
 }
 
 void loop() {
+  //joystick
+  unsigned char joystick = 0;
+  static unsigned char oldJoystick = 0;
+
   infraVal = digitalRead(infraPin);
-  if (infraVal == HIGH){
+  if (infraVal == HIGH) {
     lcd.setBacklight(HIGH);
   } else {
     lcd.setBacklight(LOW);
   }
 
   if (analogRead(joyPinX) >= 600) { //UP
+    joystick = joystick | JOYSTICK_UP ;
+  }
+  else if (analogRead(joyPinX) <= 512) { //DOWN
+    joystick = joystick | JOYSTICK_DOWN ;
+  }
+  else if (analogRead(joyPinY) >= 600) { //RIGHT
+    joystick = joystick | JOYSTICK_RIGHT;
+
+
+    //lcd.setCursor(7, 1);
+    //lcd.blink();
+  }
+  else if (analogRead(joyPinY) <= 400) { //LEFT
+    joystick = joystick | JOYSTICK_LEFT;
+
+    
+  }
+
+  if ((joystick == JOYSTICK_UP) && (oldJoystick  == 0))
+  {
+    Serial.println("Joystick up");
+
     lcd.clear();
     lcd.setCursor(0, 0);
     valueMQ4 = analogRead(A4);
@@ -54,9 +88,11 @@ void loop() {
     lcd.setCursor(0, 1);
     lcd.print(valueMQ4);
     lcd.print("ppm");
+  } 
+  else if ((joystick == JOYSTICK_DOWN) && (oldJoystick  == 0))
+  {
+    Serial.println("Joystick down");
 
-  }
-  else if (analogRead(joyPinX) <= 512) { //DOWN
     lcd.clear();
     lcd.setCursor(0, 0);
     valueMQ135 = analogRead(A3);
@@ -72,28 +108,19 @@ void loop() {
     else {
       lcd.print(" - Normal");
     }
-  }
-  else if (analogRead(joyPinY) >= 600) {
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    DHT.read11(dhtPin);
-    lcd.print("Humidity: ");
-    lcd.print(DHT.humidity);
-    lcd.print("%");
+    
+  } 
+  else if ((joystick == JOYSTICK_LEFT) && (oldJoystick  == 0))
+  {
+    Serial.println("Joystick left");
 
-    lcd.setCursor(0, 1);
-    lcd.print("Temp.: ");
-    lcd.print(desiredTemperature);
-    lcd.print("C");
-  }
-  else if (analogRead(joyPinY) <= 400) {
     lcd.clear();
     readHumiditySoil = analogRead(soilHumidity); //read sensor value
 
     humidityPercentSoil = map(readHumiditySoil, 1023, 0, 0, 100); //transform data in percent
 
     lcd.setCursor(0, 0);
-    lcd.print("Soli state: ");
+    lcd.print("Soil state: ");
     lcd.print(humidityPercentSoil);
     lcd.print("%");
 
@@ -108,8 +135,33 @@ void loop() {
       lcd.print("Good humidity");
     } else if (humidityPercentSoil == 100) {
       lcd.setCursor(0, 1);
-      lcd.print("Too higher...");
+      lcd.print("Too high...");
     }
+  } 
+  else if ((joystick == JOYSTICK_RIGHT) && (oldJoystick  == 0))
+  {
+    Serial.println("Joystick right");
+
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    DHT.read11(dhtPin);
+    
+    lcd.print("Humidity: ");
+    lcd.print(DHT.humidity);
+    lcd.print("%");
+
+    lcd.setCursor(0, 1);
+    lcd.print("Temp.: ");
+
+    lcd.print(desiredTemperature);
+    lcd.print("C");
+  }
+
+  if (joystick != oldJoystick)
+  {
+    //Serial.print("Joystick: ");
+    //Serial.println(joystick);
+    oldJoystick = joystick;
   }
 
 }
