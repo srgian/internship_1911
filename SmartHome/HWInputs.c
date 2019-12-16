@@ -12,11 +12,11 @@
 #define inputPin 11
 uint8_t pirState = LOW;
 uint8_t val = 0;
-uint8_t counter = 1500;
+
 bool motionStatus;
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 
-Password password = Password( "1564" );
+Password password= Password( "1564" );
 char hexaKeys[ROWS][COLS] =
 {
     {'1', '2', '3', 'A'},
@@ -57,6 +57,15 @@ void HWReadDHT(double *temp, double *humid)
 
 void checkPassword()
 {
+    /*
+    bool iseval=false;
+    for(...)
+        password=Password(valoare);
+        if(password.evaluate())
+            iseval=true;
+        break
+        }
+*/
     if (password.evaluate())
     {
         digitalWrite(buzzer, HIGH);
@@ -96,7 +105,6 @@ void motion_detection()
 
         if (pirState == LOW)
         {
-            // we have just turned on
             Serial.println("Motion detected!");
             motionStatus = true;
             pirState = HIGH;
@@ -112,9 +120,10 @@ void disarmed()
         lcd.backlight();
         lcd.clear();
         lcd.setCursor(1, 0);
-        lcd.print("Sistem Disarmed");
+        lcd.print("System Disarmed");
         delay(2000);
-        lcd.noBacklight();
+
+
     }
     pirState = HIGH;
 
@@ -128,9 +137,8 @@ void armed()
         lcd.backlight();
         lcd.clear();
         lcd.setCursor(1, 0);
-        lcd.print("Sistem Armed");
-        delay(2000);
-        lcd.noBacklight();
+        lcd.print("System Armed");
+
     }
     delay(10000);
     pirState = LOW;
@@ -145,18 +153,22 @@ void keypadEvent(KeypadEvent eKey)
     {
         lcd.blink_on();
         lcd.cursor_on();
-        lcd.print(eKey);
+        lcd.print("*");
+
         Serial.println(eKey);
     }
     switch (eKey)
     {
     case '#':
         checkPassword();
+
         armed();
         password.reset();
+
         break;
     case '*':
         checkPassword();
+
         disarmed();
         password.reset();
         motionStatus = false;
@@ -180,8 +192,7 @@ void keypadEvent(KeypadEvent eKey)
 
 /*void RefreshListaParole(pwd,nr_parole)
 {
-    wifi: bizkit.eu/~arobs-i1911/cfg/security.php
+    wifi: http://bizkit.eu/~arobs-i1911/cfg/Security
+
 */
-
-
 #endif // WIN
