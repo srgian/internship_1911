@@ -1,4 +1,6 @@
 #include <inttypes.h>
+#include <Servo.h>
+#include <ServoTimers.h>
 #ifndef WIN
 #include <Arduino.h>
 #define dht_apin A0 // Analog Pin 0
@@ -10,13 +12,22 @@
 #define COLS 4
 #define buzzer 10
 #define inputPin 11
+
+uint8_t doorbuzzer = 10;
+uint8_t lock;
 uint8_t pirState = LOW;
 uint8_t val = 0;
 uint8_t counter = 1500;
 bool motionStatus;
+//Servo myservo;
 LiquidCrystal_I2C lcd(0x27, 20, 4);
+LiquidCrystal_I2C lcd1(0x28, 20, 4);
 
+Password doorpassword = Password( "1234" );
 Password password = Password( "1564" );
+
+bool statuspwd;
+
 char hexaKeys[ROWS][COLS] =
 {
     {'1', '2', '3', 'A'},
@@ -53,7 +64,49 @@ void HWReadDHT(double *temp, double *humid)
     *humid=DHT.humidity;
 }
 
-
+void enter_house()
+{
+    if (doorpassword.evaluate())
+    {
+        statuspwd = true;
+        lcd.clear();
+        lcd.blink_off();
+        lcd.cursor_off();
+        lcd.setCursor(4, 0);
+        lcd.print("Success!");
+        delay(1000);
+        if (lock == false)
+        {
+            //myservo.write(5);//unlock the door
+            analogWrite(doorbuzzer, 250);
+            lcd.clear();
+            lcd.setCursor(2, 0);
+            lcd.print("Welcome home!");
+            delay(5000);
+            analogWrite(doorbuzzer, 255);
+            lock = true;//after 5s it is locking again
+        }
+        lcd.clear();
+        lcd.noBacklight();
+    }
+    else
+    {
+        statuspwd = false;
+        lcd.clear();
+        lcd.blink_off();
+        lcd.cursor_off();
+        lcd.setCursor(4, 0);
+        lcd.print("Wrong!");
+        analogWrite(doorbuzzer, 250);
+        delay(2000);
+        analogWrite(doorbuzzer, 255);
+        lcd.clear();
+        lcd.blink();
+        lcd.setCursor(2, 0);
+        lcd.print("Entrance key:");
+        lcd.setCursor(5, 1);
+    }
+}
 
 void checkPassword()
 {
@@ -86,6 +139,36 @@ void checkPassword()
         lcd.print("Enter code:");
         lcd.setCursor(0, 1);
     }
+}
+void unlock_door_event(KeypadEvent eKey) {
+  switch (keypad.getState())
+  {
+
+    case PRESSED:
+      {
+        lcd.blink_on();
+        lcd.cursor_on();
+        lcd.print("*");
+        Serial.println(eKey);
+      }
+      switch (eKey)
+      {
+        case '*':
+          enter_house();
+          doorpassword.reset();
+          break;
+        case 'A':
+          lcd.clear();
+          lcd.backlight();
+          lcd.setCursor(2, 0);
+          lcd.print("Entrance key:");
+          lcd.setCursor(5, 1);
+          break;
+        default:
+          doorpassword.append(eKey);
+      }
+  }
+
 }
 void motion_detection()
 {

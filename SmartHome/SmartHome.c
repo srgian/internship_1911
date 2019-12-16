@@ -11,6 +11,7 @@ void setup()
     LightsInit();
     ComfortInit();
     SecurityInit();
+    DoorlockInit();
 }
 
 void loop()

@@ -312,3 +312,302 @@
 	<inttypes.h>
 	<stdio.h>
 
+1574336742 source:c:\proiect_intership\smarthome\arduino\abi.cpp
+	<stdlib.h>
+
+1574336741 source:c:\proiect_intership\smarthome\arduino\cdc.cpp
+	"USBAPI.h"
+	<avr/wdt.h>
+	<util/atomic.h>
+
+1574336742 c:\proiect_intership\smarthome\arduino\usbapi.h
+	<inttypes.h>
+	<avr/pgmspace.h>
+	<avr/eeprom.h>
+	<avr/interrupt.h>
+	<util/delay.h>
+	"Arduino.h"
+	"USBDesc.h"
+	"USBCore.h"
+
+1574336741 c:\proiect_intership\smarthome\arduino\arduino.h
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<math.h>
+	<avr/pgmspace.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	"binary.h"
+	"WCharacter.h"
+	"WString.h"
+	"HardwareSerial.h"
+	"USBAPI.h"
+	"pins_arduino.h"
+
+1574336742 c:\proiect_intership\smarthome\arduino\binary.h
+
+1574336742 c:\proiect_intership\smarthome\arduino\wcharacter.h
+	<ctype.h>
+
+1574336742 c:\proiect_intership\smarthome\arduino\wstring.h
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<avr/pgmspace.h>
+
+1574336742 c:\proiect_intership\smarthome\arduino\hardwareserial.h
+	<inttypes.h>
+	"Stream.h"
+
+1574336742 c:\proiect_intership\smarthome\arduino\stream.h
+	<inttypes.h>
+	"Print.h"
+
+1574336742 c:\proiect_intership\smarthome\arduino\print.h
+	<inttypes.h>
+	<stdio.h>
+	"WString.h"
+	"Printable.h"
+
+1574336742 c:\proiect_intership\smarthome\arduino\printable.h
+	<stdlib.h>
+
+1574433300 c:\proiect_intership\smarthome\arduino\pins_arduino.h
+	<avr/pgmspace.h>
+
+1574336742 c:\proiect_intership\smarthome\arduino\usbdesc.h
+
+1574336742 c:\proiect_intership\smarthome\arduino\usbcore.h
+	"USBAPI.h"
+
+1574925626 source:c:\proiect_intership\smarthome\arduino\dht.cpp
+	"dht.h"
+
+1574925626 c:\proiect_intership\smarthome\arduino\dht.h
+	"Arduino.h"
+	"WProgram.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\hardwareserial.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<inttypes.h>
+	<util/atomic.h>
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574336742 c:\proiect_intership\smarthome\arduino\hardwareserial_private.h
+	"wiring_private.h"
+
+1574336742 c:\proiect_intership\smarthome\arduino\wiring_private.h
+	<avr/io.h>
+	<avr/interrupt.h>
+	<stdio.h>
+	<stdarg.h>
+	"Arduino.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\hardwareserial0.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\hardwareserial1.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\hardwareserial2.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\hardwareserial3.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\hooks.c
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\ipaddress.cpp
+	<Arduino.h>
+	<IPAddress.h>
+
+1574336742 c:\proiect_intership\smarthome\arduino\ipaddress.h
+	<stdint.h>
+	"Printable.h"
+	"WString.h"
+
+1575030049 source:c:\proiect_intership\smarthome\arduino\key.cpp
+	<Key.h>
+
+1575030049 c:\proiect_intership\smarthome\arduino\key.h
+	<Arduino.h>
+
+1575030049 source:c:\proiect_intership\smarthome\arduino\keypad.cpp
+	<Keypad.h>
+
+1575030049 c:\proiect_intership\smarthome\arduino\keypad.h
+	"Key.h"
+
+1575963199 source:c:\proiect_intership\smarthome\arduino\liquidcrystal_i2c.cpp
+	"LiquidCrystal_I2C.h"
+	<inttypes.h>
+	"Arduino.h"
+	"WProgram.h"
+	"Wire.h"
+
+1575963199 c:\proiect_intership\smarthome\arduino\liquidcrystal_i2c.h
+	<inttypes.h>
+	"Print.h"
+	<Wire.h>
+
+1575963199 c:\proiect_intership\smarthome\arduino\wire.h
+	<inttypes.h>
+	"Stream.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\main.cpp
+	<Arduino.h>
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\new.cpp
+	<stdlib.h>
+
+1575963199 source:c:\proiect_intership\smarthome\arduino\password.cpp
+	"Password.h"
+
+1575963199 c:\proiect_intership\smarthome\arduino\password.h
+	"Arduino.h"
+	"WProgram.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\pluggableusb.cpp
+	"USBAPI.h"
+	"PluggableUSB.h"
+
+1574336742 c:\proiect_intership\smarthome\arduino\pluggableusb.h
+	"USBAPI.h"
+	<stdint.h>
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\print.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"Arduino.h"
+	"Print.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\stream.cpp
+	"Arduino.h"
+	"Stream.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\tone.cpp
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	"Arduino.h"
+	"pins_arduino.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\usbcore.cpp
+	"USBAPI.h"
+	"PluggableUSB.h"
+	<stdlib.h>
+
+1575963199 source:c:\proiect_intership\smarthome\arduino\utility\twi.c
+	<math.h>
+	<stdlib.h>
+	<inttypes.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	<compat/twi.h>
+	"Arduino.h"
+	"pins_arduino.h"
+	"twi.h"
+
+1575963199 c:\proiect_intership\smarthome\arduino\utility\twi.h
+	<inttypes.h>
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\winterrupts.c
+	<inttypes.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	<stdio.h>
+	"wiring_private.h"
+
+1575963199 source:c:\proiect_intership\smarthome\arduino\wire.cpp
+	<stdlib.h>
+	<string.h>
+	<inttypes.h>
+	"utility/twi.h"
+	"Wire.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\wiring.c
+	"wiring_private.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\wiring_analog.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\wiring_digital.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\wiring_pulse.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\wiring_shift.c
+	"wiring_private.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\wmath.cpp
+	"stdlib.h"
+
+1574336742 source:c:\proiect_intership\smarthome\arduino\wstring.cpp
+	"WString.h"
+
+1574925626 source:c:\proiect_intership\smarthome\comfort.c
+	"Outputs.h"
+	"Inputs.h"
+
+1575963199 c:\proiect_intership\smarthome\outputs.h
+	<Arduino.h>
+	"LiquidCrystal_I2C.h"
+	<inttypes.h>
+
+1576058043 c:\proiect_intership\smarthome\inputs.h
+	<inttypes.h>
+	"Keypad.h"
+
+1575963199 source:c:\proiect_intership\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1575030049 source:c:\proiect_intership\smarthome\lights.c
+	"Lights.h"
+	"Inputs.h"
+	"Outputs.h"
+	<stdio.h>
+	<inttypes.h>
+
+1574765979 c:\proiect_intership\smarthome\lights.h
+	<inttypes.h>
+
+1575963199 source:c:\proiect_intership\smarthome\logic.c
+	"Logic.h"
+	"Lights.h"
+	"Comfort.h"
+	"Security.h"
+
+1574336741 c:\proiect_intership\smarthome\logic.h
+
+1574925626 c:\proiect_intership\smarthome\comfort.h
+
+1575963199 c:\proiect_intership\smarthome\security.h
+	<inttypes.h>
+
+1575963199 source:c:\proiect_intership\smarthome\smarthome.c
+	<Arduino.h>
+	"Logic.h"
+	"Lights.h"
+	"Comfort.h"
+	"Security.h"
+

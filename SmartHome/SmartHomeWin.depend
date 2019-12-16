@@ -253,3 +253,15 @@
 	<inttypes.h>
 	<stdio.h>
 
+1576240425 source:c:\proiect_intership\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+	<dht.h>
+	"Keypad.h"
+	"Password.h"
+	"LiquidCrystal_I2C.h"
+
+1575963199 source:c:\proiect_intership\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+

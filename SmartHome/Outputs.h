@@ -39,5 +39,5 @@ void HWDPrint(double val);
 void SWDPrint(double val);
 
 extern LiquidCrystal_I2C lcd;
-
+extern LiquidCrystal_I2C lcd1;
 #endif // HWOUTPUTS_H

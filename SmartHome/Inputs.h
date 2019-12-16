@@ -3,6 +3,7 @@
 
 #include <inttypes.h>
 #include "Keypad.h"
+//#include "Servo.h"
 #ifndef WIN
 
 #define ReadInputs HWReadInputs
@@ -38,6 +39,7 @@ void disarmed();
 
 extern Keypad keypad;
 
+void unlock_door_event(KeypadEvent eKey);
 
 
 #endif // HWINPUTS_H

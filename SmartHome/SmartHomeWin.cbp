@@ -38,6 +38,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Comfort.h" />
+		<Unit filename="Doorlock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Doorlock.h" />
 		<Unit filename="HWInputs.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -67,6 +71,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Security.h" />
+		<Unit filename="arduino/Servo.cpp" />
+		<Unit filename="arduino/Servo.h" />
+		<Unit filename="arduino/ServoTimers.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
