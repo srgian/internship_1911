@@ -18,7 +18,7 @@
 
 extern uint8_t pirState;
 extern uint8_t val;
-extern uint16_t counter;
+extern uint8_t counter;
 extern bool motionStatus;
 
 uint8_t SWDigitalRead(uint8_t pin);

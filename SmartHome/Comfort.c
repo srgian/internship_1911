@@ -8,18 +8,18 @@ void ComfortInit()
 
 void ComfortMainFunction()
 {
-    double temp;
-    double humid;
-    ReadDHT(&temp, &humid);
+  double temp;
+  double humid;
+  ReadDHT(&temp, &humid);
 
-    Print("***Current data***");
-    Print("Humidity: ");
-    DPrint(humid);
-    Print("%  \n");
-    Print("Temperature: ");
-    DPrint(temp);
-    Print("C  \n");
+  Print("***Current data***");
+  Print("Humidity: ");
+  DPrint(humid);
+  Print("%  \n");
+  Print("Temperature: ");
+  DPrint(temp);
+  Print("C  \n");
 
-    delay(3000);//Wait 3 seconds before accessing sensor again
+  delay(3000);//Wait 3 seconds before accessing sensor again
 
 }

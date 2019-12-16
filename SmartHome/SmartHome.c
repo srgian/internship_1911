@@ -18,5 +18,5 @@ void loop()
 {
 
     MainFunction();
-    delay(10);
+    //delay(500);
 }
