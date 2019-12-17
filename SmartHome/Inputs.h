@@ -2,6 +2,8 @@
 #define HWINPUTS_H
 
 #include <inttypes.h>
+#include "Arduino.h"
+#include "Servo.h"
 #include "Keypad.h"
 //#include "Servo.h"
 #ifndef WIN
@@ -41,5 +43,6 @@ extern Keypad keypad;
 
 void unlock_door_event(KeypadEvent eKey);
 
+extern Servo myservo;
 
 #endif // HWINPUTS_H

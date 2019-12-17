@@ -1,6 +1,5 @@
 #include <inttypes.h>
 #include <Servo.h>
-#include <ServoTimers.h>
 #ifndef WIN
 #include <Arduino.h>
 #define dht_apin A0 // Analog Pin 0
@@ -8,20 +7,20 @@
 #include "Keypad.h"
 #include "Password.h"
 #include "LiquidCrystal_I2C.h"
+#include "Doorlock.h"
 #define ROWS 4
 #define COLS 4
 #define buzzer 10
 #define inputPin 11
+#define doorbuzzer 12
 
-uint8_t doorbuzzer = 10;
-uint8_t lock;
 uint8_t pirState = LOW;
 uint8_t val = 0;
-uint8_t counter = 1500;
+uint16_t counter = 1500;
 bool motionStatus;
-//Servo myservo;
-LiquidCrystal_I2C lcd(0x27, 20, 4);
-LiquidCrystal_I2C lcd1(0x28, 20, 4);
+Servo myservo;
+LiquidCrystal_I2C lcdSecurity(0x27, 20, 4);
+LiquidCrystal_I2C lcdDoorlock(0x26, 20, 4);
 
 Password doorpassword = Password( "1234" );
 Password password = Password( "1564" );
@@ -69,42 +68,42 @@ void enter_house()
     if (doorpassword.evaluate())
     {
         statuspwd = true;
-        lcd.clear();
-        lcd.blink_off();
-        lcd.cursor_off();
-        lcd.setCursor(4, 0);
-        lcd.print("Success!");
+        lcdDoorlock.clear();
+        lcdDoorlock.blink_off();
+        lcdDoorlock.cursor_off();
+        lcdDoorlock.setCursor(4, 0);
+        lcdDoorlock.print("Success!");
         delay(1000);
         if (lock == false)
         {
-            //myservo.write(5);//unlock the door
+            myservo.write(5);//unlock the door
             analogWrite(doorbuzzer, 250);
-            lcd.clear();
-            lcd.setCursor(2, 0);
-            lcd.print("Welcome home!");
+            lcdDoorlock.clear();
+            lcdDoorlock.setCursor(2, 0);
+            lcdDoorlock.print("Welcome home!");
             delay(5000);
             analogWrite(doorbuzzer, 255);
             lock = true;//after 5s it is locking again
         }
-        lcd.clear();
-        lcd.noBacklight();
+        lcdDoorlock.clear();
+        lcdDoorlock.noBacklight();
     }
     else
     {
         statuspwd = false;
-        lcd.clear();
-        lcd.blink_off();
-        lcd.cursor_off();
-        lcd.setCursor(4, 0);
-        lcd.print("Wrong!");
+        lcdDoorlock.clear();
+        lcdDoorlock.blink_off();
+        lcdDoorlock.cursor_off();
+        lcdDoorlock.setCursor(4, 0);
+        lcdDoorlock.print("Wrong!");
         analogWrite(doorbuzzer, 250);
         delay(2000);
         analogWrite(doorbuzzer, 255);
-        lcd.clear();
-        lcd.blink();
-        lcd.setCursor(2, 0);
-        lcd.print("Entrance key:");
-        lcd.setCursor(5, 1);
+        lcdDoorlock.clear();
+        lcdDoorlock.blink();
+        lcdDoorlock.setCursor(2, 0);
+        lcdDoorlock.print("Entrance key:");
+        lcdDoorlock.setCursor(5, 1);
     }
 }
 
@@ -113,31 +112,31 @@ void checkPassword()
     if (password.evaluate())
     {
         digitalWrite(buzzer, HIGH);
-        lcd.clear();
-        lcd.blink_off();
-        lcd.cursor_off();
-        lcd.print("Success");
+        lcdSecurity.clear();
+        lcdSecurity.blink_off();
+        lcdSecurity.cursor_off();
+        lcdSecurity.print("Success");
         delay(1000);
         pirState = HIGH;
         digitalWrite(buzzer, HIGH);
-        lcd.clear();
+        lcdSecurity.clear();
         delay(1000);
-        lcd.noBacklight();
+        lcdSecurity.noBacklight();
     }
     else
     {
-        lcd.backlight();
+        lcdSecurity.backlight();
         analogWrite(buzzer, 250);
-        lcd.clear();
-        lcd.blink_off();
-        lcd.cursor_off();
-        lcd.print("Wrong");
+        lcdSecurity.clear();
+        lcdSecurity.blink_off();
+        lcdSecurity.cursor_off();
+        lcdSecurity.print("Wrong");
         delay(1000);
         analogWrite(pirState, 0);// read input value
-        lcd.clear();
-        lcd.backlight();
-        lcd.print("Enter code:");
-        lcd.setCursor(0, 1);
+        lcdSecurity.clear();
+        lcdSecurity.backlight();
+        lcdSecurity.print("Enter code:");
+        lcdSecurity.setCursor(0, 1);
     }
 }
 void unlock_door_event(KeypadEvent eKey) {
@@ -146,9 +145,9 @@ void unlock_door_event(KeypadEvent eKey) {
 
     case PRESSED:
       {
-        lcd.blink_on();
-        lcd.cursor_on();
-        lcd.print("*");
+        lcdDoorlock.blink_on();
+        lcdDoorlock.cursor_on();
+        lcdDoorlock.print("*");
         Serial.println(eKey);
       }
       switch (eKey)
@@ -158,11 +157,11 @@ void unlock_door_event(KeypadEvent eKey) {
           doorpassword.reset();
           break;
         case 'A':
-          lcd.clear();
-          lcd.backlight();
-          lcd.setCursor(2, 0);
-          lcd.print("Entrance key:");
-          lcd.setCursor(5, 1);
+          lcdDoorlock.clear();
+          lcdDoorlock.backlight();
+          lcdDoorlock.setCursor(2, 0);
+          lcdDoorlock.print("Entrance key:");
+          lcdDoorlock.setCursor(5, 1);
           break;
         default:
           doorpassword.append(eKey);
@@ -192,33 +191,33 @@ void disarmed()
 
     if (password.evaluate())
     {
-        lcd.backlight();
-        lcd.clear();
-        lcd.setCursor(1, 0);
-        lcd.print("Sistem Disarmed");
+        lcdSecurity.backlight();
+        lcdSecurity.clear();
+        lcdSecurity.setCursor(1, 0);
+        lcdSecurity.print("Sistem Disarmed");
         delay(2000);
-        lcd.noBacklight();
+        lcdSecurity.noBacklight();
     }
     pirState = HIGH;
 
-    lcd.noBacklight();
+    lcdSecurity.noBacklight();
 }
 void armed()
 {
 
     if (password.evaluate())
     {
-        lcd.backlight();
-        lcd.clear();
-        lcd.setCursor(1, 0);
-        lcd.print("Sistem Armed");
+        lcdSecurity.backlight();
+        lcdSecurity.clear();
+        lcdSecurity.setCursor(1, 0);
+        lcdSecurity.print("Sistem Armed");
         delay(2000);
-        lcd.noBacklight();
+        lcdSecurity.noBacklight();
     }
     delay(10000);
     pirState = LOW;
 
-    lcd.noBacklight();
+    lcdSecurity.noBacklight();
 }
 void keypadEvent(KeypadEvent eKey)
 {
@@ -226,9 +225,9 @@ void keypadEvent(KeypadEvent eKey)
     {
     case PRESSED:
     {
-        lcd.blink_on();
-        lcd.cursor_on();
-        lcd.print(eKey);
+        lcdSecurity.blink_on();
+        lcdSecurity.cursor_on();
+        lcdSecurity.print(eKey);
         Serial.println(eKey);
     }
     switch (eKey)
@@ -245,11 +244,11 @@ void keypadEvent(KeypadEvent eKey)
         motionStatus = false;
         break;
     case 'C':
-        lcd.clear();
-        lcd.backlight();
+        lcdSecurity.clear();
+        lcdSecurity.backlight();
         password.reset();
-        lcd.print("Enter code:");
-        lcd.setCursor(0, 1);
+        lcdSecurity.print("Enter code:");
+        lcdSecurity.setCursor(0, 1);
         break;
     default:
         password.append(eKey);

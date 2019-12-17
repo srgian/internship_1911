@@ -3,8 +3,7 @@
 #include "Inputs.h"
 uint8_t inputPin=11;
 uint8_t buzzer=10;
-uint16_t counter=1500;
-
+//uint16_t counter=1500;
 char *pwds;
 uint8_t pwdCnt=0;
 
@@ -14,11 +13,11 @@ void SecurityInit()
     HWDigitalMode(buzzer,OUTPUT);
     HWDigitalWrite(buzzer, HIGH);
     HWDigitalMode(pirState,INPUT);
-    lcd.init();
-    lcd.backlight();
-    lcd.setCursor(1, 0);
-    lcd.print("Enter code:");
-    lcd.setCursor(0, 1);
+    lcdSecurity.init();
+    lcdSecurity.backlight();
+    lcdSecurity.setCursor(1, 0);
+    lcdSecurity.print("Enter code:");
+    lcdSecurity.setCursor(0, 1);
     Serial.begin(9600);
     keypad.addEventListener((void (*)(char))keypadEvent);
 }

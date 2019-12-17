@@ -38,6 +38,6 @@ void SWPrint(char *str);
 void HWDPrint(double val);
 void SWDPrint(double val);
 
-extern LiquidCrystal_I2C lcd;
-extern LiquidCrystal_I2C lcd1;
+extern LiquidCrystal_I2C lcdSecurity;
+extern LiquidCrystal_I2C lcdDoorlock;
 #endif // HWOUTPUTS_H
