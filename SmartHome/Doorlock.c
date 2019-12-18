@@ -5,7 +5,6 @@
 uint8_t doorbuzzer = 12;
 uint8_t lock;
 
-
 void DoorlockInit()
 {
     HWDigitalMode(doorbuzzer,OUTPUT);
