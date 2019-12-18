@@ -21,9 +21,9 @@ void DoorlockInit()
     lcdDoorlock.setCursor(5, 1);
     lcdDoorlock.blink();
     Serial.begin(9600);
-    keypad.addEventListener((void (*)(char))unlock_door_event);
+    keypadDl.addEventListener((void (*)(char))unlock_door_event);
 }
 void DoorlockMainFunction()
 {
-  keypad.getKey();
+  keypadDl.getKey();
 }

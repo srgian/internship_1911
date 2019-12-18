@@ -8,6 +8,6 @@ void MainFunction()
 {
     //LightsMainFunction();
     //ComfortMainFunction();
-    //SecurityMainFunction();
-    DoorlockMainFunction();
+    SecurityMainFunction();
+   DoorlockMainFunction();
 }

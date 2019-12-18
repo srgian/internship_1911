@@ -6,9 +6,6 @@
 void DoorlockInit();
 void DoorlockMainFunction();
 
-extern uint8_t doorbuzzer;
-extern uint8_t lock;
-
 
 
 #endif

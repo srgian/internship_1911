@@ -1,11 +1,17 @@
 #include "Security.h"
+#include <stdlib.h>
 #include "Outputs.h"
 #include "Inputs.h"
+#include "WifiConn.h"
+#define NULL_PTR 0U
 uint8_t inputPin=11;
-uint8_t buzzer=10;
-//uint16_t counter=1500;
+uint8_t buzzer=12;
+uint16_t counter=1500;
+
 char *pwds;
 uint8_t pwdCnt=0;
+char parole;
+
 
 
 void SecurityInit()

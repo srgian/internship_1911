@@ -20,7 +20,7 @@
 
 extern uint8_t pirState;
 extern uint8_t val;
-extern uint8_t counter;
+extern uint16_t counter;
 extern bool motionStatus;
 
 uint8_t SWDigitalRead(uint8_t pin);
@@ -38,10 +38,11 @@ void keypadEvent(KeypadEvent eKey);
 void motion_detection();
 void armed();
 void disarmed();
+void unlock_door_event(KeypadEvent eKey);
 
 extern Keypad keypad;
+extern Keypad keypadDl;
 
-void unlock_door_event(KeypadEvent eKey);
 
 extern Servo myservo;
 

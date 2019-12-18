@@ -10,13 +10,12 @@
 #include "Doorlock.h"
 #define ROWS 4
 #define COLS 4
-#define buzzer 10
-#define inputPin 11
-#define doorbuzzer 12
 
+#define inputPin 11
+#define buzzer 12
+extern uint8_t lock;
 uint8_t pirState = LOW;
 uint8_t val = 0;
-uint16_t counter = 1500;
 bool motionStatus;
 Servo myservo;
 LiquidCrystal_I2C lcdSecurity(0x27, 20, 4);
@@ -27,6 +26,17 @@ Password password = Password( "1564" );
 
 bool statuspwd;
 
+char hexaKeysDoorlock[ROWS][COLS] =
+{
+    {'1', '2', '3', 'A'},
+    {'4', '5', '6', 'B'},
+    {'7', '8', '9', 'C'},
+    {'*', '0', '#', 'D'}
+};
+byte rowPinsDl[ROWS] = {52, 50, 48, 46};
+byte colPinsDl[COLS] = {53, 51, 49, 47};
+Keypad keypadDl = Keypad(makeKeymap(hexaKeysDoorlock), rowPinsDl, colPinsDl, ROWS, COLS);
+
 char hexaKeys[ROWS][COLS] =
 {
     {'1', '2', '3', 'A'},
@@ -34,10 +44,9 @@ char hexaKeys[ROWS][COLS] =
     {'7', '8', '9', 'C'},
     {'*', '0', '#', 'D'}
 };
-byte rowPins[ROWS] = {9, 8, 7, 6};
-byte colPins[COLS] = {5, 4, 3, 2};
+byte rowPins[ROWS] = {22, 23, 24, 25};
+byte colPins[COLS] = {26, 27, 28, 29};
 Keypad keypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
-
 
 dht DHT;
 
@@ -77,12 +86,12 @@ void enter_house()
         if (lock == false)
         {
             myservo.write(5);//unlock the door
-            analogWrite(doorbuzzer, 250);
+            analogWrite(buzzer, 250);
             lcdDoorlock.clear();
             lcdDoorlock.setCursor(2, 0);
             lcdDoorlock.print("Welcome home!");
             delay(5000);
-            analogWrite(doorbuzzer, 255);
+            analogWrite(buzzer, 255);
             lock = true;//after 5s it is locking again
         }
         lcdDoorlock.clear();
@@ -96,9 +105,9 @@ void enter_house()
         lcdDoorlock.cursor_off();
         lcdDoorlock.setCursor(4, 0);
         lcdDoorlock.print("Wrong!");
-        analogWrite(doorbuzzer, 250);
+        analogWrite(buzzer, 250);
         delay(2000);
-        analogWrite(doorbuzzer, 255);
+        analogWrite(buzzer, 255);
         lcdDoorlock.clear();
         lcdDoorlock.blink();
         lcdDoorlock.setCursor(2, 0);
@@ -109,7 +118,7 @@ void enter_house()
 
 void checkPassword()
 {
-    if (password.evaluate())
+     if (password.evaluate())
     {
         digitalWrite(buzzer, HIGH);
         lcdSecurity.clear();
@@ -122,6 +131,7 @@ void checkPassword()
         lcdSecurity.clear();
         delay(1000);
         lcdSecurity.noBacklight();
+        //iseval=true;
     }
     else
     {
@@ -137,10 +147,12 @@ void checkPassword()
         lcdSecurity.backlight();
         lcdSecurity.print("Enter code:");
         lcdSecurity.setCursor(0, 1);
+       // iseval=false;
     }
+
 }
 void unlock_door_event(KeypadEvent eKey) {
-  switch (keypad.getState())
+  switch (keypadDl.getState())
   {
 
     case PRESSED:
@@ -205,14 +217,13 @@ void disarmed()
 void armed()
 {
 
-    if (password.evaluate())
+      if (password.evaluate())
     {
         lcdSecurity.backlight();
         lcdSecurity.clear();
         lcdSecurity.setCursor(1, 0);
-        lcdSecurity.print("Sistem Armed");
-        delay(2000);
-        lcdSecurity.noBacklight();
+        lcdSecurity.print("System Armed");
+
     }
     delay(10000);
     pirState = LOW;
@@ -227,7 +238,7 @@ void keypadEvent(KeypadEvent eKey)
     {
         lcdSecurity.blink_on();
         lcdSecurity.cursor_on();
-        lcdSecurity.print(eKey);
+        lcdSecurity.print("*");
         Serial.println(eKey);
     }
     switch (eKey)
