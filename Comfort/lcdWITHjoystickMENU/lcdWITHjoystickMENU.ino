@@ -35,7 +35,7 @@ bool motionState = false; // we start with no motion detected
 byte customChar[] = {
   B00100,
   B00100,
-  B00100,ss
+  B00100,
   B00100,
   B00100,
   B10101,
