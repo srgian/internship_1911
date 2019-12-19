@@ -59,11 +59,11 @@ byte downArrow[] = {
 
 byte leftArrow[] = {
   B00000,
+  B00000,
   B00100,
-  B00010,
+  B01000,
   B11111,
-  B11111,
-  B00010,
+  B01000,
   B00100,
   B00000
 };
@@ -91,10 +91,10 @@ struct MENU {
   char *prefix;
   char *suffix;
   bool writable;
-//  byte goUp;
-//  byte goDown;
-//  byte goLeft;
-//  byte goRight;
+  byte goUp;
+  byte goDown;
+  byte goLeft;
+  byte goRight;
 };
 
 
@@ -120,63 +120,55 @@ void lcdRefresh()
   if (currentMenu->title == "Air quality:    ") {
     lcd.setCursor(0, 0);
     lcd.createChar(0, rightArrow);
-    lcd.write(0);
     lcd.home();
+    lcd.write(0);
 
     lcd.setCursor(1, 0);
     lcd.createChar(1, downArrow);
-    lcd.write(1);
     lcd.home();
+    lcd.write(1);
 
   }
 
-  else if (currentMenu->title == "Temperature    ") {
+  if (currentMenu->title == "Temperature    ") {
     lcd.setCursor(0, 0);
     lcd.createChar(2, upArrow);
-    lcd.write(2);
     lcd.home();
+    lcd.write(2);
 
     lcd.setCursor(1, 0);
     lcd.createChar(3, downArrow);
+    lcd.home();
     lcd.write(3);
-    lcd.home();
 
   }
 
-  else if (currentMenu->title == "Alcohol level:  ") {
+  if (currentMenu->title == "Alcohol level:  ") {
     lcd.setCursor(0, 0);
-    lcd.createChar(0, leftArrow);
-    lcd.write(0);
+    lcd.createChar(4, leftArrow);
     lcd.home();
-
+    lcd.write(4);
   }
 
-  else if (currentMenu->title == "Humidity:       ") {
+  if (currentMenu->title == "Humidity:       ") {
     lcd.setCursor(0, 0);
-    lcd.createChar(0, downArrow);
-    lcd.write(0);
+    lcd.createChar(5, downArrow);
     lcd.home();
-
+    lcd.write(5);
   }
 
-  else if (currentMenu->title == "Soil state      ") {
+  if (currentMenu->title == "Soil state      ") {
     lcd.setCursor(0, 0);
-    lcd.createChar(0, upArrow);
-    lcd.write(0);
+    lcd.createChar(6, upArrow);
     lcd.home();
+    lcd.write(6);
+  }
 
-    lcd.setCursor(1, 0);
-    lcd.createChar(1, downArrow);
+  if (currentMenu->title == "Set new temp.:  ") {
+    lcd.setCursor(0, 0);
+    lcd.createChar(1, leftArrow);
+    lcd.home();
     lcd.write(1);
-    lcd.home();
-
-  }
-
-  else if (currentMenu->title == "Set new temp.:  ") {
-    lcd.setCursor(0, 0);
-    lcd.createChar(0, rightArrow);
-    lcd.write(0);
-    lcd.home();
   }
 }
 
@@ -190,10 +182,10 @@ void setup() {
   air_quality.parent = NULL;
   //air_quality.prefix = ": ";
   air_quality.suffix = "ppm           ";
-//  air_quality.goUp = NULL;
-//  air_quality.goDown = downArrow;
-//  air_quality.goRight = rightArrow;
-//  air_quality.goLeft = NULL;
+  //  air_quality.goUp = NULL;
+  //  air_quality.goDown = downArrow;
+  //  air_quality.goRight = rightArrow;
+  //  air_quality.goLeft = NULL;
 
   //menu for alcohol_lvl (subMenu of air_quality parent)
   alcohol_lvl.title = "Alcohol level:  ";
@@ -203,10 +195,10 @@ void setup() {
   alcohol_lvl.parent = &air_quality;
   alcohol_lvl.prefix = NULL;
   alcohol_lvl.suffix = "mg/l            ";
-//  alcohol_lvl.goLeft = leftArrow;
-//  alcohol_lvl.goRight = NULL;
-//  alcohol_lvl.goDown = NULL;
-//  alcohol_lvl.goUp = NULL;
+  //  alcohol_lvl.goLeft = leftArrow;
+  //  alcohol_lvl.goRight = NULL;
+  //  alcohol_lvl.goDown = NULL;
+  //  alcohol_lvl.goUp = NULL;
 
   //menu for current_temp
   current_temp.title = "Temperature    ";
@@ -278,7 +270,7 @@ void loop() {
   readHumiditySoil = analogRead(soilHumidity); //read sensor value
   humidityPercentSoil = map(readHumiditySoil, 1023, 0, 0, 100); //transform data in percent
   if (soil_state.sensorValue < 10) {
-    soil_state.prefix = "Wet the soil!";
+    soil_state.prefix = "Wet the soil! ";
   } else if (humidityPercentSoil >= 10) {
     soil_state.prefix = "Poor value: ";
   } else if (humidityPercentSoil >= 50) {
@@ -327,7 +319,6 @@ void loop() {
     {
       currentMenu = currentMenu->prevMenu;
     }
-
 
   }
   else if ((joystick == JOYSTICK_DOWN) && (oldJoystick == 0))
