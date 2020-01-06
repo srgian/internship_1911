@@ -17,11 +17,15 @@
 #define digitalPinRead SWDigitalRead
 #define ReadDHT SWReadDHT
 #endif // WIN
-
+extern uint8_t lock;
 extern uint8_t pirState;
 extern uint8_t val;
 extern uint16_t counter;
+extern uint16_t counterDl;
 extern bool motionStatus;
+extern size_t pos;
+extern char *parole;
+extern uint8_t statusWifi;
 
 uint8_t SWDigitalRead(uint8_t pin);
 uint8_t HWDigitalRead(uint8_t pin);
@@ -43,6 +47,11 @@ void unlock_door_event(KeypadEvent eKey);
 extern Keypad keypad;
 extern Keypad keypadDl;
 
+
+
+void SecurityReloadPasswords();
+extern void infoPgSecurity();
+extern int connectToWifi();
 
 extern Servo myservo;
 

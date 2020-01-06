@@ -4,15 +4,13 @@
 #include "Inputs.h"
 #include "WifiConn.h"
 #define NULL_PTR 0U
-uint8_t inputPin=11;
-uint8_t buzzer=12;
+uint8_t inputPin;
+uint8_t buzzer=10;
 uint16_t counter=1500;
 
 char *pwds;
 uint8_t pwdCnt=0;
-char parole;
-
-
+//char *parole;
 
 void SecurityInit()
 {
@@ -27,53 +25,56 @@ void SecurityInit()
     Serial.begin(9600);
     keypad.addEventListener((void (*)(char))keypadEvent);
 }
-/*
-char *pwds;
-uint8_t pwdCnt=0;
 
-void SecurityReloadPasswords()
-{
-    pwdCnt=0;
-    pwds=malloc(pwdCnt*4*sizeof(char));
+
+
+void SecurityReloadPasswords(){
+
+    pwdCnt=pos/4;
+    Serial.print(pwdCnt);
+
+    pwds=(char*)malloc(pwdCnt*4*sizeof(char));
+
     if(pwds!=NULL_PTR)
     {
-        for(int i=0; i<pwdCnt;i++)
-        {
-            char x[4]={0x30+i,0x31+i,0x32+i,0x33+i};
-            memcpy((pwds+(i*4)), &x, 4);
-            //*(pwds+(i*4))=;
-        }
+    //    for(int i=0; i<pwdCnt;i++)
+      //  {
+            //char x[4]={0x30+i,0x31+i,0x32+i,0x33+i};
+            //memcpy(pwds, &parole, 4);
+            //*(pwds+(i*4))= dataPgSecurity;
+        //}
     }
+
     for(int i=0; i<4*pwdCnt; i++)
     {
         printf("%d: 0x%02X\n", i, *(pwds+i));
     }
-    free(pwds);
 }
-*/
-void SecurityMainFunction()
-{
+void SecurityMainFunction(){
+
     motion_detection();
 
     keypad.getKey();
-//    delay(10);
+
     if (motionStatus == true)
     {
 
-        if(counter==0)
-        {
+        if(counter==0){
             analogWrite(buzzer, 250);
             counter = 1500;
             Serial.println("15s");
-
         }
-        else
-        {
+        else{
             counter--;
         }
-
+    }
+    if(statusWifi == 1){
+        infoPgSecurity();
+        Serial.print(parole);
+        SecurityReloadPasswords();
     }
 }
+
 
 
 

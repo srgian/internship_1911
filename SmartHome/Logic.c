@@ -9,5 +9,5 @@ void MainFunction()
     //LightsMainFunction();
     //ComfortMainFunction();
     SecurityMainFunction();
-   DoorlockMainFunction();
+    DoorlockMainFunction();
 }

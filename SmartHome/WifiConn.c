@@ -7,29 +7,30 @@ uint8_t statusWifi = 0;
 uint8_t continuee = 1;
 uint8_t stopp = 0;
 
+char *parole;
+char *lumini;
+char *confort;
+
+size_t pos = 0;
+
 char netwpass[] = "%AngeloA50%angeloangelo%3";//"%3" reprezinta nr pg
 char pgLights[] = "%www.bizkit.eu%GET /~arobs-i1911/cfg/lights.php";
 char pgConfort[] = "%www.bizkit.eu%GET /~arobs-i1911/cfg/confort.php";
 char pgSecurity[] = "%www.bizkit.eu%GET /~arobs-i1911/cfg/security.php";
 
-char dataPgLights[200];
-char dataPgConfort[200];
-char dataPgSecurity[200];
 
 uint8_t stopInit = 0;
-char response[200];
-
-/*void setup() {
-  Serial.begin(9600);
-}*/
 
 void infoPgSecurity() {
-  Serial.print(pgSecurity);
 
-  size_t pos = 0;
+ Serial.print(pgSecurity);
+
+  int c = 0;
+  char dataPgSecurity[200];
+
   for (;;) {
     while (!Serial.available()) {}
-    int c = (char)Serial.read();
+    c = (char)Serial.read();
     if (c == -1) continue;   // no input
     if (pos < sizeof dataPgSecurity - 1) {
       dataPgSecurity[pos++] = c;
@@ -38,16 +39,25 @@ void infoPgSecurity() {
       break;
     }
   }
+  if (parole == NULL)
+    {
+        free(parole);
+    }
+  parole=(char*)malloc(pos*sizeof(char));
+  memcpy(parole, dataPgSecurity, pos);
+  pos = 0;
 }
 
 void infoPgLights() {
 
   Serial.print(pgLights);
 
-  size_t pos = 0;
+  int c = 0;
+  char dataPgLights[200];
+
   for (;;) {
     while (!Serial.available()) {}
-    int c = (char)Serial.read();
+    c = (char)Serial.read();
     if (c == -1) continue;   // no input
     if (pos < sizeof dataPgLights - 1) {
       dataPgLights[pos++] = c;
@@ -56,16 +66,25 @@ void infoPgLights() {
       break;
     }
   }
+  if (lumini == NULL)
+    {
+        free(lumini);
+    }
+  lumini=(char*)malloc(pos*sizeof(char));
+  memcpy(lumini, dataPgLights, pos);
+  pos = 0;
 }
 
 void infoPgConfort() {
 
   Serial.print(pgConfort);
 
-  size_t pos = 0;
+  int c = 0;
+  char dataPgConfort[200];
+
   for (;;) {
     while (!Serial.available()) {}
-    int c = (char)Serial.read();
+    c = (char)Serial.read();
     if (c == -1) continue;   // no input
     if (pos < sizeof dataPgConfort - 1) {
       dataPgConfort[pos++] = c;
@@ -74,9 +93,17 @@ void infoPgConfort() {
       break;
     }
   }
+  if (confort == NULL)
+    {
+        free(confort);
+    }
+  confort=(char*)malloc(pos*sizeof(char));
+  memcpy(confort, dataPgConfort, pos);
+  pos = 0;
 }
 
-int connectToWifi() {
+void connectToWifi() {
+
   for (;;) {
     connectWifi = 1;
     Serial.write(connectWifi);//Se cere conectarea la wifi
@@ -91,28 +118,21 @@ int connectToWifi() {
 
   while (!Serial.available()) {} //se asteapta raspunsul conectarii
   statusWifi = Serial.read();
-  if (statusWifi == 1) {
-    return 1;//Conectare Reusita!
+  /*if (statusWifi == 1) {
+    //return 1;//Conectare Reusita!
   }
   if (statusWifi == 2) {
-    return 2;//Time Out!
-  }
+    //return 2;//Time Out!
+  }*/
 }
 
 void connToWifi() {/////////////////////////////////////////////LOOP//////////////////////////////////////////////
 
-  if (connectToWifi() == 1) {//daca este conectat urmeaza cererea de info de pe dif pg
-    infoPgSecurity();
-    infoPgLights();
-    infoPgConfort();
-
+    connectToWifi();
+  if (statusWifi == 1) {//daca este conectat urmeaza cererea de info de pe dif pg
+    //Serial.print("Wifi conectat!");
   }
   else {
-    Serial.println("Conectare neusita!");
+    Serial.println("Conectare nereusita!");
   }
-
-Serial.println("");
-Serial.println(dataPgSecurity);
-Serial.println(dataPgLights);
-Serial.println(dataPgConfort);
 }

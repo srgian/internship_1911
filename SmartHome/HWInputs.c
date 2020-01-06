@@ -10,13 +10,14 @@
 #include "Doorlock.h"
 #define ROWS 4
 #define COLS 4
-
 #define inputPin 11
-#define buzzer 12
-extern uint8_t lock;
+#define buzzer 10
+#define doorbuzzer 12
+uint8_t lock;
 uint8_t pirState = LOW;
 uint8_t val = 0;
 bool motionStatus;
+uint16_t counterDl=0;
 Servo myservo;
 LiquidCrystal_I2C lcdSecurity(0x27, 20, 4);
 LiquidCrystal_I2C lcdDoorlock(0x26, 20, 4);
@@ -82,16 +83,16 @@ void enter_house()
         lcdDoorlock.cursor_off();
         lcdDoorlock.setCursor(4, 0);
         lcdDoorlock.print("Success!");
-        delay(1000);
+        delay(500);
         if (lock == false)
-        {
+        {   counterDl=500;
             myservo.write(5);//unlock the door
-            analogWrite(buzzer, 250);
+
             lcdDoorlock.clear();
             lcdDoorlock.setCursor(2, 0);
             lcdDoorlock.print("Welcome home!");
-            delay(5000);
-            analogWrite(buzzer, 255);
+            delay(500);
+
             lock = true;//after 5s it is locking again
         }
         lcdDoorlock.clear();
@@ -100,14 +101,14 @@ void enter_house()
     else
     {
         statuspwd = false;
+        counterDl=0;
         lcdDoorlock.clear();
         lcdDoorlock.blink_off();
         lcdDoorlock.cursor_off();
         lcdDoorlock.setCursor(4, 0);
         lcdDoorlock.print("Wrong!");
-        analogWrite(buzzer, 250);
-        delay(2000);
-        analogWrite(buzzer, 255);
+        analogWrite(doorbuzzer, 250);
+        delay(1000);
         lcdDoorlock.clear();
         lcdDoorlock.blink();
         lcdDoorlock.setCursor(2, 0);
@@ -129,7 +130,6 @@ void checkPassword()
         pirState = HIGH;
         digitalWrite(buzzer, HIGH);
         lcdSecurity.clear();
-        delay(1000);
         lcdSecurity.noBacklight();
         //iseval=true;
     }

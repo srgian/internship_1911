@@ -3,7 +3,7 @@
 #include "Inputs.h"
 
 uint8_t doorbuzzer = 12;
-uint8_t lock;
+
 
 void DoorlockInit()
 {
@@ -25,4 +25,11 @@ void DoorlockInit()
 void DoorlockMainFunction()
 {
   keypadDl.getKey();
+  delay(10);
+  if (counterDl==0)
+  {
+        analogWrite(doorbuzzer, 255);
+  }else {
+  counterDl--;
+    analogWrite(doorbuzzer, 250);}
 }
