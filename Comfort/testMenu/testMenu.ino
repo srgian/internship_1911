@@ -335,10 +335,10 @@ void loop() {
   Serial.println(pinX);
   Serial.print("Y: ");
   Serial.println(pinY);
-  
+
   //joystick UP | DOWN | RIGHT | LEFT
   //  if (analogRead(joyPinX) >= 600) { //UP
-  
+
   if (pinY >= 450) { //UP
 
     joystick = joystick | JOYSTICK_UP ;
@@ -357,8 +357,9 @@ void loop() {
     joystick = joystick | JOYSTICK_LEFT;
   }
 
-Serial.print(joystick);
-  
+  Serial.print("Joystick value: ");
+  Serial.println(joystick);
+
   //menu interactions
   if ((joystick == JOYSTICK_UP) && (oldJoystick == 0))
   {
@@ -396,7 +397,7 @@ Serial.print(joystick);
     }
   }
 
-  
+
   //Serial.print("Joystick: ");
   //Serial.println(joystick);
   oldJoystick = joystick;
