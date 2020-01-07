@@ -19,8 +19,8 @@
 
 LiquidCrystal_I2C lcd(0x27, 20, 4); //lcd object
 
-int desiredTemperature = 25, fahrenheitTemperature;
-//int valueMQ4;
+int desiredTemperature = 25, fahrenheitTemperature, newTemp = 22;
+
 int valueMQ135;
 
 //temperature variable
@@ -35,48 +35,60 @@ int motionDetectorValue = 0; //motion detector value
 float alcoholValue;
 
 //arrows
-byte upArrow[] = {
-  B00100,
-  B01110,
-  B10101,
-  B00100,
-  B00100,
-  B00100,
-  B00100,
-  B00100
-};
 
-byte downArrow[] = {
-  B00100,
-  B00100,
-  B00100,
-  B00100,
-  B00100,
-  B10101,
-  B01110,
-  B00100
-};
-
-byte leftArrow[] = {
-  B00000,
-  B00000,
-  B00100,
-  B01000,
+byte topUpDown[] = {
   B11111,
-  B01000,
   B00100,
-  B00000
+  B01110,
+  B11111,
+  B00100,
+  B11111,
+  B01110,
+  B00100
+};
+
+byte bottomUpDown[] = {
+  B00100,
+  B01110,
+  B11111,
+  B00100,
+  B11111,
+  B01110,
+  B00100,
+  B11111
+};
+
+byte middleUpDown[] = {
+  B00100,
+  B01110,
+  B11111,
+  B00100,
+  B00100,
+  B11111,
+  B01110,
+  B00100
 };
 
 byte rightArrow[] = {
-  B00000,
-  B00000,
-  B00100,
-  B00010,
-  B11111,
-  B00010,
-  B00100,
-  B00000
+  B10000,
+  B11000,
+  B11100,
+  B11110,
+  B11110,
+  B11100,
+  B11000,
+  B10000
+};
+
+byte leftArrow[] = {
+  B00001,
+  B00011,
+  B00111,
+  B01111,
+  B01111,
+  B00111,
+  B00011,
+  B00001
 };
 
 byte nullArrow[] = {
@@ -88,6 +100,28 @@ byte nullArrow[] = {
   B11111,
   B11111,
   B11111
+};
+
+byte leftBlank[] = {
+  B00001,
+  B00011,
+  B00101,
+  B01001,
+  B01001,
+  B00101,
+  B00011,
+  B00001
+};
+
+byte rightBlank[] = {
+  B10000,
+  B11000,
+  B10100,
+  B10010,
+  B10010,
+  B10100,
+  B11000,
+  B10000
 };
 
 //define MENU struct
@@ -115,17 +149,25 @@ MENU *currentMenu = &air_quality;
 
 void lcdRefresh()
 {
-  lcd.setBacklight(HIGH);
+  int pinX = analogRead(joyPinX);
+  int pinY = analogRead(joyPinY);
+  unsigned char joystick = 0;
+
+  //lcd.setBacklight(HIGH);
+  buttonState = digitalRead(joyButton);
 
   //create arrows
-  lcd.createChar(0, downArrow);
-  lcd.createChar(1, upArrow);
-  lcd.createChar(2, rightArrow);
-  lcd.createChar(3, leftArrow);
-  lcd.createChar(4, nullArrow);
+  lcd.createChar(0, topUpDown);
+  lcd.createChar(1, bottomUpDown);
+  lcd.createChar(2, middleUpDown);
+  lcd.createChar(3, rightArrow);
+  lcd.createChar(4, leftArrow);
+  lcd.createChar(5, nullArrow);
+  lcd.createChar(6, rightBlank);
+  lcd.createChar(7, leftBlank);
 
   //start the menu...
-  lcd.setCursor(3, 0);
+  lcd.setCursor(2, 0);
   lcd.print(currentMenu->title);
 
   lcd.setCursor(0, 1);
@@ -133,84 +175,119 @@ void lcdRefresh()
   lcd.print(currentMenu->sensorValue);
   lcd.print(currentMenu->suffix);
 
-  //down - pos 1; up - pos 2; right/left - pos 3
-
   if (currentMenu->title == "Air quality:    ") {
-    //down arrow
+    //topUpDown arrows
     lcd.setCursor(0, 0);
     lcd.print(char(0));
 
-    //blank
+    //rightArrow
     lcd.setCursor(1, 0);
-    lcd.print(char(4));
+    lcd.print(char(3));
 
-    //right arrow
-    lcd.setCursor(2, 0);
-    lcd.print(char(2));
+    lcd.noBlink();
   }
 
   if (currentMenu->title == "Temperature    ") {
-    //down arrow
+    //middleUpDown arrows
     lcd.setCursor(0, 0);
-    lcd.print(char(0));
-
-    //up arrow
-    lcd.setCursor(1, 0);
-    lcd.print(char(1));
-
-    //right arrow
-    lcd.setCursor(2, 0);
     lcd.print(char(2));
+
+    //rightArrow
+    lcd.setCursor(1, 0);
+    lcd.print(char(3));
+
+
+    //press on joystick button to transform from Celsius to Fahrenheit (poor implementation - hidden feature)
+    if ((buttonState == LOW) && (buttonLastState == HIGH))
+    {
+      Serial.println("Button pressed");
+      current_temp.suffix = "F";
+      DHT.temperature = DHT.temperature * 1.8 + 32;
+      current_temp.sensorValue = DHT.temperature;
+
+    }
+    else if ((buttonState == HIGH) && (buttonLastState == LOW))
+    {
+      Serial.println("Button released");
+      current_temp.sensorValue = DHT.temperature;
+      //DHT.temperature = DHT.temperature;
+      current_temp.suffix = "C";
+    }
+
+    buttonLastState = buttonState;
+
+    lcd.noBlink();
   }
 
   if (currentMenu->title == "Alcohol level:  ") {
     //blank arrows
     lcd.setCursor(0, 0);
-    lcd.print(char(4));
+    lcd.print(char(5));
+
+    //leftArrow
     lcd.setCursor(1, 0);
     lcd.print(char(4));
 
-    //left arrow
-    lcd.setCursor(2, 0);
-    lcd.print(char(3));
+    lcd.noBlink();
   }
 
   if (currentMenu->title == "Humidity:       ") {
-    //down arrow
+    //middleUpDown arrows
     lcd.setCursor(0, 0);
-    lcd.print(char(0));
+    lcd.print(char(2));
 
-    //up arrow
+    //blank
     lcd.setCursor(1, 0);
-    lcd.print(char(1));
+    lcd.print(char(6));
 
-    //blank arrow
-    lcd.setCursor(2, 0);
-    lcd.print(char(4));
+    lcd.noBlink();
   }
 
   if (currentMenu->title == "Soil state      ") {
-    //up arrow
-    lcd.setCursor(1, 0);
+    //bottomUpDown arrow
+    lcd.setCursor(0, 0);
     lcd.print(char(1));
 
-    //blank arrows
-    lcd.setCursor(0, 0);
-    lcd.print(char(4));
-    lcd.setCursor(2, 0);
-    lcd.print(char(4));
+    //blank
+    lcd.setCursor(1, 0);
+    lcd.print(char(6));
+
+    lcd.noBlink();
   }
 
   if (currentMenu->title == "Set new temp.:  ") {
-    //blank arrows
+    //blank
     lcd.setCursor(0, 0);
-    lcd.print(char(4));
+    lcd.print(char(5));
+
+    //leftArrow
     lcd.setCursor(1, 0);
     lcd.print(char(4));
 
-    //left arrow
-    lcd.setCursor(2, 0);
-    lcd.print(char(3));
+    //set new temperature
+    //joystick UP | DOWN
+    if (pinY >= 450) { //UP
+      joystick = joystick | JOYSTICK_UP ;
+
+      if (newTemp == 37) {
+        newTemp = 37;
+      } 
+      else {
+        newTemp += 1;
+      }
+
+    }
+    else if (pinY <= 350) { //DOWN
+      joystick = joystick | JOYSTICK_DOWN ;
+
+      if (newTemp == 9) {
+        newTemp = 9;
+      }
+      else {
+        newTemp -= 1;
+
+      }
+    }
   }
 }
 
@@ -241,7 +318,7 @@ void setup() {
   current_temp.parent = NULL;
   current_temp.nextMenu = &air_humidity;
   current_temp.prefix = "Current: ";
-  current_temp.suffix = "C";
+  current_temp.suffix = "C              ";
 
   //menu for new_temp (subMenu for current_temp)
   new_temp.title = "Set new temp.:  ";
@@ -272,11 +349,12 @@ void setup() {
 
   //lcd
   lcd.init();
-  lcd.setBacklight(HIGH);
+  //lcd.setBacklight(HIGH);
 
   //joystick
   pinMode(joyButton, INPUT);
   digitalWrite(joyButton, HIGH);
+
   buttonLastState = digitalRead(joyButton);
 
   Serial.begin(9600);
@@ -292,13 +370,29 @@ void loop() {
 
   valueMQ135 = analogRead(A3);
   alcoholValue = valueMQ135 / 100;
-
   //sensorValue
   air_quality.sensorValue = valueMQ135;
   alcohol_lvl.sensorValue = (float)alcoholValue;
   current_temp.sensorValue = DHT.temperature;
+  new_temp.sensorValue = newTemp;
   air_humidity.sensorValue = DHT.humidity;
   soil_state.sensorValue = humidityPercentSoil;
+
+  //set new temp.
+  if (newTemp == 37) {
+    new_temp.suffix = "C-maxim point!";
+    //newTemp = 37;
+  }
+  else if (newTemp == 9) {
+    //lcd.setCursor(0, 1);
+    new_temp.suffix = "C-minim point!";
+    newTemp = 9;
+
+  }
+  else {
+    new_temp.suffix = "C                ";
+
+  }
 
   //soil state
   readHumiditySoil = analogRead(soilHumidity); //read sensor value
@@ -316,7 +410,8 @@ void loop() {
   //alcohol value
   if (alcoholValue >= 5) {
     alcohol_lvl.prefix = "Alert! ";
-  } else {
+  }
+  else {
     alcohol_lvl.prefix = "Normal: ";
   }
 
@@ -324,7 +419,8 @@ void loop() {
   motionDetectorValue = digitalRead(infraRedPin);
   if (motionDetectorValue == HIGH) {
     lcd.setBacklight(HIGH);
-  } else {
+  }
+  else {
     lcd.setBacklight(LOW);
   }
 
@@ -337,21 +433,14 @@ void loop() {
   Serial.println(pinY);
 
   //joystick UP | DOWN | RIGHT | LEFT
-  //  if (analogRead(joyPinX) >= 600) { //UP
-
   if (pinY >= 450) { //UP
-
     joystick = joystick | JOYSTICK_UP ;
   }
   else if (pinY <= 350) { //DOWN
     joystick = joystick | JOYSTICK_DOWN ;
   }
-  //  else if (analogRead(joyPinY) >= 600) { //RIGHT
   else if (pinX >= 450) { //RIGHT
     joystick = joystick | JOYSTICK_RIGHT;
-    //lcd.setCursor(7, 1);
-    //lcd.blink();
-
   }
   else if (pinX <= 350) { //LEFT
     joystick = joystick | JOYSTICK_LEFT;
@@ -368,7 +457,6 @@ void loop() {
     {
       currentMenu = currentMenu->prevMenu;
     }
-
   }
   else if ((joystick == JOYSTICK_DOWN) && (oldJoystick == 0))
   {
@@ -397,9 +485,6 @@ void loop() {
     }
   }
 
-
-  //Serial.print("Joystick: ");
-  //Serial.println(joystick);
   oldJoystick = joystick;
 
   lcdRefresh();
