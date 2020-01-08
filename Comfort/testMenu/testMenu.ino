@@ -19,7 +19,7 @@
 
 LiquidCrystal_I2C lcd(0x27, 20, 4); //lcd object
 
-int desiredTemperature = 25, fahrenheitTemperature, newTemp = 22;
+int desiredTemperature = 25, fahrenheitTemperature, newTemp = 20;
 
 int valueMQ135;
 
@@ -35,7 +35,6 @@ int motionDetectorValue = 0; //motion detector value
 float alcoholValue;
 
 //arrows
-
 byte topUpDown[] = {
   B11111,
   B00100,
@@ -183,8 +182,6 @@ void lcdRefresh()
     //rightArrow
     lcd.setCursor(1, 0);
     lcd.print(char(3));
-
-    lcd.noBlink();
   }
 
   if (currentMenu->title == "Temperature    ") {
@@ -196,7 +193,6 @@ void lcdRefresh()
     lcd.setCursor(1, 0);
     lcd.print(char(3));
 
-
     //press on joystick button to transform from Celsius to Fahrenheit (poor implementation - hidden feature)
     if ((buttonState == LOW) && (buttonLastState == HIGH))
     {
@@ -204,19 +200,15 @@ void lcdRefresh()
       current_temp.suffix = "F";
       DHT.temperature = DHT.temperature * 1.8 + 32;
       current_temp.sensorValue = DHT.temperature;
-
     }
     else if ((buttonState == HIGH) && (buttonLastState == LOW))
     {
       Serial.println("Button released");
       current_temp.sensorValue = DHT.temperature;
-      //DHT.temperature = DHT.temperature;
       current_temp.suffix = "C";
     }
 
     buttonLastState = buttonState;
-
-    lcd.noBlink();
   }
 
   if (currentMenu->title == "Alcohol level:  ") {
@@ -227,8 +219,6 @@ void lcdRefresh()
     //leftArrow
     lcd.setCursor(1, 0);
     lcd.print(char(4));
-
-    lcd.noBlink();
   }
 
   if (currentMenu->title == "Humidity:       ") {
@@ -239,8 +229,6 @@ void lcdRefresh()
     //blank
     lcd.setCursor(1, 0);
     lcd.print(char(6));
-
-    lcd.noBlink();
   }
 
   if (currentMenu->title == "Soil state      ") {
@@ -251,8 +239,6 @@ void lcdRefresh()
     //blank
     lcd.setCursor(1, 0);
     lcd.print(char(6));
-
-    lcd.noBlink();
   }
 
   if (currentMenu->title == "Set new temp.:  ") {
@@ -271,11 +257,10 @@ void lcdRefresh()
 
       if (newTemp == 37) {
         newTemp = 37;
-      } 
+      }
       else {
         newTemp += 1;
       }
-
     }
     else if (pinY <= 350) { //DOWN
       joystick = joystick | JOYSTICK_DOWN ;
@@ -285,7 +270,6 @@ void lcdRefresh()
       }
       else {
         newTemp -= 1;
-
       }
     }
   }
@@ -326,7 +310,7 @@ void setup() {
   new_temp.subMenu = NULL;
   new_temp.parent = &current_temp;
   new_temp.nextMenu = NULL;
-  new_temp.prefix = NULL;
+  new_temp.prefix = "*";
   new_temp.suffix = "C               ";
 
   //menu for air_humidity
@@ -381,17 +365,14 @@ void loop() {
   //set new temp.
   if (newTemp == 37) {
     new_temp.suffix = "C-maxim point!";
-    //newTemp = 37;
+    newTemp = 37;
   }
   else if (newTemp == 9) {
-    //lcd.setCursor(0, 1);
     new_temp.suffix = "C-minim point!";
     newTemp = 9;
-
   }
   else {
     new_temp.suffix = "C                ";
-
   }
 
   //soil state
