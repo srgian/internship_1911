@@ -192,50 +192,76 @@
 
 1574863906 c:\users\dan.donica\documents\internship\smarthome\comfort.h
 
-1575288127 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\hwinputs.c
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\comfort.c
+	"Outputs.h"
+	"Inputs.h"
+
+1574925540 c:\users\oana.miron\documents\internship_1911\smarthome\outputs.h
+	<Arduino.h>
+	<inttypes.h>
+
+1574925540 c:\users\oana.miron\documents\internship_1911\smarthome\inputs.h
+	<inttypes.h>
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\hwinputs.c
 	<inttypes.h>
 	<Arduino.h>
 	<dht.h>
 
-1574955882 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\hwoutputs.c
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\hwoutputs.c
 	<inttypes.h>
 	<Arduino.h>
 
-1574955882 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\lights.c
+1574937141 source:c:\users\oana.miron\documents\internship_1911\smarthome\lights.c
 	"Lights.h"
 	"Inputs.h"
 	"Outputs.h"
 	<stdio.h>
-
-1574955882 c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\lights.h
 	<inttypes.h>
 
-1575287161 c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\inputs.h
+1574849032 c:\users\oana.miron\documents\internship_1911\smarthome\lights.h
 	<inttypes.h>
 
-1575288524 c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\outputs.h
-	<Arduino.h>
-	<inttypes.h>
-
-1574955882 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\logic.c
+1574949137 source:c:\users\oana.miron\documents\internship_1911\smarthome\logic.c
 	"Logic.h"
 	"Lights.h"
 	"Comfort.h"
+	"Security.h"
 
-1574955882 c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\logic.h
+1574419997 c:\users\oana.miron\documents\internship_1911\smarthome\logic.h
 
-1574955882 c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\comfort.h
+1574925540 c:\users\oana.miron\documents\internship_1911\smarthome\comfort.h
 
-1574955882 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\main.c
+1574950362 c:\users\oana.miron\documents\internship_1911\smarthome\security.h
+	<inttypes.h>
+
+1574849032 source:c:\users\oana.miron\documents\internship_1911\smarthome\main.c
 	<time.h>
 	"Logic.h"
 	"Lights.h"
 
-1575288262 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\swinputs.c
+1574931845 source:c:\users\oana.miron\documents\internship_1911\smarthome\security.c
+	"Security.h"
+	"Inputs.h"
+	"Outputs.h"
+
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\swinputs.c
 	<inttypes.h>
 	<stdio.h>
 
-1574955882 source:c:\users\robert.horja\desktop\proiectprim\comfort\smarthome\swoutputs.c
+1574925540 source:c:\users\oana.miron\documents\internship_1911\smarthome\swoutputs.c
 	<inttypes.h>
 	<stdio.h>
+
+1576240425 source:c:\proiect_intership\smarthome\hwinputs.c
+	<inttypes.h>
+	<Arduino.h>
+	<dht.h>
+	"Keypad.h"
+	"Password.h"
+	"LiquidCrystal_I2C.h"
+
+1575963199 source:c:\proiect_intership\smarthome\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
 

@@ -2,34 +2,23 @@
 #define HWOUTPUTS_H
 
 #ifndef WIN
+
 #include <Arduino.h>
+#include "LiquidCrystal_I2C.h"
 #define Print HWPrint
 #define DPrint HWDPrint
-
-//for MQ4, MQ135
-#define PrintMQ4 HWPrintMQ4
-#define PrintMQ135 HWPrintMQ135
-#define DPrintMQ4 HWDPrintMQ4
-#define DPrintMQ135 HWDPrintMQ135
-
 #define digitalPinWrite HWDigitalWrite
 #define digitalPinMode HWDigitalMode
 #define WriteOutputs HWWriteOutputs
 
-#else
 
+#else
 #define Print SWPrint
 #define DPrint SWDPrint
-
-//for MQ4, MQ135
-#define PrintMQ4 SWPrintMQ4
-#define PrintMQ135 SWPrintMQ135
-#define DPrintMQ4 SWDPrintMQ4
-#define DPrintMQ135 SWDPrintMQ4
-
 #define digitalPinWrite SWDigitalWrite
 #define digitalPinMode SWDigitalMode
 #define WriteOutputs SWWriteOutputs
+
 #endif // WIN
 
 #include <inttypes.h>
@@ -49,14 +38,6 @@ void SWPrint(char *str);
 void HWDPrint(double val);
 void SWDPrint(double val);
 
-//for MQ4, MQ135
-//void HWPrintMQ4(char *strMQ4);
-//void SWPrintMQ135(char *strMQ135);
-
-void HWDPrintMQ135(uint8_t *valueMQ135);
-void SWDPrintMQ135(uint8_t *valueMQ135);
-
-void HWDPrintMQ4(uint8_t *valueMQ4);
-void SWDPrintMQ4(uint8_t *valueMQ4);
-
+extern LiquidCrystal_I2C lcdSecurity;
+extern LiquidCrystal_I2C lcdDoorlock;
 #endif // HWOUTPUTS_H
