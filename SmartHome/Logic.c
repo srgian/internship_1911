@@ -11,8 +11,8 @@ void MainFunction()
     // LightsMainFunction();
     // ComfortMainFunction();
     //connToWifi();
+    DoorlockMainFunction();
     SecurityMainFunction();
 
-    DoorlockMainFunction();
 
 }

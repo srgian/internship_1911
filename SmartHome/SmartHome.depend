@@ -706,3 +706,354 @@
 	<Arduino.h>
 	<inttypes.h>
 
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\abi.cpp
+	<stdlib.h>
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\cdc.cpp
+	"USBAPI.h"
+	<avr/wdt.h>
+	<util/atomic.h>
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\usbapi.h
+	<inttypes.h>
+	<avr/pgmspace.h>
+	<avr/eeprom.h>
+	<avr/interrupt.h>
+	<util/delay.h>
+	"Arduino.h"
+	"USBDesc.h"
+	"USBCore.h"
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\arduino.h
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<math.h>
+	<avr/pgmspace.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	"binary.h"
+	"WCharacter.h"
+	"WString.h"
+	"HardwareSerial.h"
+	"USBAPI.h"
+	"pins_arduino.h"
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\binary.h
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\wcharacter.h
+	<ctype.h>
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\wstring.h
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<avr/pgmspace.h>
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\hardwareserial.h
+	<inttypes.h>
+	"Stream.h"
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\stream.h
+	<inttypes.h>
+	"Print.h"
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\print.h
+	<inttypes.h>
+	<stdio.h>
+	"WString.h"
+	"Printable.h"
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\printable.h
+	<stdlib.h>
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\pins_arduino.h
+	<avr/pgmspace.h>
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\usbdesc.h
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\usbcore.h
+	"USBAPI.h"
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\dht.cpp
+	"dht.h"
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\dht.h
+	"Arduino.h"
+	"WProgram.h"
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\hardwareserial.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<inttypes.h>
+	<util/atomic.h>
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\hardwareserial_private.h
+	"wiring_private.h"
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\wiring_private.h
+	<avr/io.h>
+	<avr/interrupt.h>
+	<stdio.h>
+	<stdarg.h>
+	"Arduino.h"
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\hardwareserial0.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\hardwareserial1.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\hardwareserial2.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\hardwareserial3.cpp
+	"Arduino.h"
+	"HardwareSerial.h"
+	"HardwareSerial_private.h"
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\hooks.c
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\ipaddress.cpp
+	<Arduino.h>
+	<IPAddress.h>
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\ipaddress.h
+	<stdint.h>
+	"Printable.h"
+	"WString.h"
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\key.cpp
+	<Key.h>
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\key.h
+	<Arduino.h>
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\keypad.cpp
+	<Keypad.h>
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\keypad.h
+	"Key.h"
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\liquidcrystal_i2c.cpp
+	"LiquidCrystal_I2C.h"
+	<inttypes.h>
+	"Arduino.h"
+	"WProgram.h"
+	"Wire.h"
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\liquidcrystal_i2c.h
+	<inttypes.h>
+	"Print.h"
+	<Wire.h>
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\wire.h
+	<inttypes.h>
+	"Stream.h"
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\main.cpp
+	<Arduino.h>
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\new.cpp
+	<stdlib.h>
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\password.cpp
+	"Password.h"
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\password.h
+	"Arduino.h"
+	"WProgram.h"
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\pluggableusb.cpp
+	"USBAPI.h"
+	"PluggableUSB.h"
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\pluggableusb.h
+	"USBAPI.h"
+	<stdint.h>
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\print.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"Arduino.h"
+	"Print.h"
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\servo.cpp
+	<avr/interrupt.h>
+	<Arduino.h>
+	"Servo.h"
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\servo.h
+	<inttypes.h>
+	"ServoTimers.h"
+	"sam/ServoTimers.h"
+	"samd/ServoTimers.h"
+	"stm32f4/ServoTimers.h"
+	"nrf52/ServoTimers.h"
+	"megaavr/ServoTimers.h"
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\servotimers.h
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\stream.cpp
+	"Arduino.h"
+	"Stream.h"
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\tone.cpp
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	"Arduino.h"
+	"pins_arduino.h"
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\usbcore.cpp
+	"USBAPI.h"
+	"PluggableUSB.h"
+	<stdlib.h>
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\utility\twi.c
+	<math.h>
+	<stdlib.h>
+	<inttypes.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	<compat/twi.h>
+	"Arduino.h"
+	"pins_arduino.h"
+	"twi.h"
+
+1578559276 c:\users\tibor.vuin\desktop\smarthomeoana\arduino\utility\twi.h
+	<inttypes.h>
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\winterrupts.c
+	<inttypes.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	<stdio.h>
+	"wiring_private.h"
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\wire.cpp
+	<stdlib.h>
+	<string.h>
+	<inttypes.h>
+	"utility/twi.h"
+	"Wire.h"
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\wiring.c
+	"wiring_private.h"
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\wiring_analog.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\wiring_digital.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\wiring_pulse.c
+	"wiring_private.h"
+	"pins_arduino.h"
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\wiring_shift.c
+	"wiring_private.h"
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\wmath.cpp
+	"stdlib.h"
+
+1578559276 source:c:\users\tibor.vuin\desktop\smarthomeoana\arduino\wstring.cpp
+	"WString.h"
+
+1578559274 source:c:\users\tibor.vuin\desktop\smarthomeoana\comfort.c
+	"Outputs.h"
+	"Inputs.h"
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\outputs.h
+	<Arduino.h>
+	"LiquidCrystal_I2C.h"
+	<inttypes.h>
+
+1578559274 c:\users\tibor.vuin\desktop\smarthomeoana\inputs.h
+	<inttypes.h>
+	"Arduino.h"
+	"Servo.h"
+	"Keypad.h"
+
+1578559274 source:c:\users\tibor.vuin\desktop\smarthomeoana\doorlock.c
+	"Doorlock.h"
+	"Outputs.h"
+	"Inputs.h"
+
+1578559274 c:\users\tibor.vuin\desktop\smarthomeoana\doorlock.h
+	<inttypes.h>
+
+1578559274 source:c:\users\tibor.vuin\desktop\smarthomeoana\hwoutputs.c
+	<inttypes.h>
+	<Arduino.h>
+
+1578559274 source:c:\users\tibor.vuin\desktop\smarthomeoana\lights.c
+	"Lights.h"
+	"Inputs.h"
+	"Outputs.h"
+	<stdio.h>
+	<inttypes.h>
+
+1578559274 c:\users\tibor.vuin\desktop\smarthomeoana\lights.h
+	<inttypes.h>
+
+1578572954 source:c:\users\tibor.vuin\desktop\smarthomeoana\logic.c
+	"Logic.h"
+	"Lights.h"
+	"Comfort.h"
+	"Security.h"
+	"Doorlock.h"
+	"WifiConn.h"
+
+1578559274 c:\users\tibor.vuin\desktop\smarthomeoana\logic.h
+
+1578559274 c:\users\tibor.vuin\desktop\smarthomeoana\comfort.h
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\security.h
+	<inttypes.h>
+
+1578559275 c:\users\tibor.vuin\desktop\smarthomeoana\wificonn.h
+	<Arduino.h>
+	<inttypes.h>
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\security.c
+	"Security.h"
+	<stdlib.h>
+	"Outputs.h"
+	"Inputs.h"
+	"WifiConn.h"
+
+1578572954 source:c:\users\tibor.vuin\desktop\smarthomeoana\smarthome.c
+	<Arduino.h>
+	"Logic.h"
+	"Lights.h"
+	"Comfort.h"
+	"Security.h"
+	"Doorlock.h"
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\swinputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1578559275 source:c:\users\tibor.vuin\desktop\smarthomeoana\swoutputs.c
+	<inttypes.h>
+	<stdio.h>
+
+1578571938 source:c:\users\tibor.vuin\desktop\smarthomeoana\wificonn.c
+	"WifiConn.h"
+	<Arduino.h>
+

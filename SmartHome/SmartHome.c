@@ -12,7 +12,7 @@ void setup()
     //LightsInit();
     //ComfortInit();
     SecurityInit();
-    //DoorlockInit();
+    DoorlockInit();
 }
 
 void loop()

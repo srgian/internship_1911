@@ -14,7 +14,7 @@ char *confort;
 size_t pospass = 0;
 size_t pos = 0;
 
-char netwpass[] = "%AngeloA50%angeloangelo%1";//"%3" reprezinta nr pg
+char netwpass[] = "%samsung%xena8583%1";//"%3" reprezinta nr pg
 char pgLights[] = "%www.bizkit.eu%GET /~arobs-i1911/cfg/lights.php";
 char pgConfort[] = "%www.bizkit.eu%GET /~arobs-i1911/cfg/confort.php";
 char pgSecurity[] = "%www.bizkit.eu%GET /~arobs-i1911/cfg/security.php";

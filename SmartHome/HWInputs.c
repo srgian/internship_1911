@@ -81,11 +81,156 @@ void HWReadDHT(double *temp, double *humid)
     *humid=DHT.humidity;
 }
 
-void enter_house()
+/*void enter_house()
 {
-    if (doorpassword.evaluate())
+
+        //statuspwd = true;
+        lcdDoorlock.clear();
+        lcdDoorlock.blink_off();
+        lcdDoorlock.cursor_off();
+        lcdDoorlock.setCursor(4, 0);
+        lcdDoorlock.print("Success!");
+        delay(500);
+        if (lock == false)
+        {
+            counterDl=500;
+            myservo.write(5);//unlock the door
+
+            lcdDoorlock.clear();
+            lcdDoorlock.setCursor(2, 0);
+            lcdDoorlock.print("Welcome home!");
+            delay(500);
+
+            lock = true;//after 5s it is locking again
+        }
+        lcdDoorlock.clear();
+        lcdDoorlock.noBacklight();
+
+    else
     {
-        statuspwd = true;
+        statuspwd = false;
+        counterDl=0;
+        lcdDoorlock.clear();
+        lcdDoorlock.blink_off();
+        lcdDoorlock.cursor_off();
+        lcdDoorlock.setCursor(4, 0);
+        lcdDoorlock.print("Wrong!");
+        analogWrite(doorbuzzer, 250);
+        delay(1000);
+        lcdDoorlock.clear();
+        lcdDoorlock.blink();
+        lcdDoorlock.setCursor(2, 0);
+        lcdDoorlock.print("Entrance key:");
+        lcdDoorlock.setCursor(5, 1);
+    }*/
+
+
+static int j;
+int passwordevaluate(char cp[])
+{
+    passwordvalid = true;
+    int retval = 0;
+    Serial.println(keypressed);
+    Serial.println(cp);
+    retval = strcmp(keypressed, cp);
+    if ( retval != 0)
+    {
+        passwordvalid = false;
+    }
+    return retval;
+
+}
+int checkpassword()
+{
+
+    if(statusWifi == 0)
+    {
+        connToWifi();
+    }
+    if(pwd == NULL)
+    {
+        infoPgSecurity();
+        pwd=parole;
+    }
+
+    Serial.println(pwd);
+    int allgood = 0;
+
+
+    for (int i = 0; i < cnt; i++)
+    {
+        char cp[5] = {};
+        cp[4] = 0x00;
+        memcpy(&cp, (pwd + i * 4), 4);
+        passwordevaluate(cp);
+        if (passwordvalid)
+        {
+            allgood = 1;
+        }
+
+    }
+
+    Serial.print("all good=");
+    Serial.println(allgood);
+    if (allgood)
+
+    {
+        lcdSecurity.backlight();
+        lcdSecurity.clear();
+        lcdSecurity.print("Succes!");
+        lock = false;
+        delay(100);
+    }
+    else
+    {
+
+        lcdSecurity.clear();
+        lcdSecurity.print("Try again!");
+        delay(100);
+        lcdSecurity.clear();
+        lcdSecurity.print("Enter code:");
+        lcdSecurity.setCursor(0, 1);
+        lock = true;
+    }
+
+    return allgood;
+
+}
+int checkpassworddl()
+{
+
+    if(statusWifi == 0)
+    {
+        connToWifi();
+    }
+    if(pwd == NULL)
+    {
+        infoPgSecurity();
+        pwd=parole;
+    }
+
+    Serial.println(pwd);
+    int good = 0;
+
+
+    for (int i = 0; i < cnt; i++)
+    {
+        char cp[5] = {};
+        cp[4] = 0x00;
+        memcpy(&cp, (pwd + i * 4), 4);
+        passwordevaluate(cp);
+        if (passwordvalid)
+        {
+            good = 1;
+        }
+
+    }
+
+    Serial.print("all good=1");
+//    Serial.println(allgood);
+    if (good)
+
+    {
         lcdDoorlock.clear();
         lcdDoorlock.blink_off();
         lcdDoorlock.cursor_off();
@@ -107,6 +252,7 @@ void enter_house()
         lcdDoorlock.clear();
         lcdDoorlock.noBacklight();
     }
+
     else
     {
         statuspwd = false;
@@ -124,69 +270,7 @@ void enter_house()
         lcdDoorlock.print("Entrance key:");
         lcdDoorlock.setCursor(5, 1);
     }
-}
-
-static int j;
-int passwordevaluate(char cp[])
-{
-    passwordvalid = true;
-    int retval = 0;
-    Serial.println(keypressed);
-    Serial.println(cp);
-    retval = strcmp(keypressed, cp);
-    if ( retval != 0)
-    {
-        passwordvalid = false;
-    }
-    return retval;
-
-}
-int checkpassword()
-{
-    connToWifi();
-    if(statusWifi == 1){
-
-    Serial.print("Aici");
-    infoPgSecurity();
-    Serial.print("Aicii");
-    pwd=parole;
-}
-    Serial.println(pwd);
-    int allgood = 0;
-
-    for (int i = 0; i < cnt; i++)
-    {
-        char cp[5] = {};
-        cp[4] = 0x00;
-        memcpy(&cp, (pwd + i * 4), 4);
-        passwordevaluate(cp);
-        if (passwordvalid)
-        {
-            allgood = 1;
-        }
-
-    }
-    Serial.print("all good=");
-    Serial.println(allgood);
-    if (allgood)
-
-    {
-        lcdSecurity.backlight();
-        lcdSecurity.clear();
-        lcdSecurity.print("Succes!");
-        delay(100);
-    }
-    else
-    {
-        lcdSecurity.clear();
-        lcdSecurity.print("Try again!");
-        delay(100);
-        lcdSecurity.clear();
-        lcdSecurity.print("Enter code:");
-        lcdSecurity.setCursor(0, 1);
-    }
-
-    return allgood;
+    return good;
 
 }
 
@@ -202,13 +286,35 @@ void unlock_door_event(KeypadEvent eKey)
         lcdDoorlock.print("*");
         Serial.println(eKey);
     }
+
     switch (eKey)
     {
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+
+    {
+        keypressed[i] = eKey;
+        i++;
+    }
+    Serial.println(keypressed);
+    break;
     case '*':
-        enter_house();
-        doorpassword.reset();
-        break;
-    case 'A':
+        i = 0;
+        keypressed[4] = '\0';
+        if(checkpassworddl())
+            break;
+
+    case 'C':
+        Serial.println("Clear");
+        i = 0;
         lcdDoorlock.clear();
         lcdDoorlock.backlight();
         lcdDoorlock.setCursor(2, 0);
@@ -216,11 +322,11 @@ void unlock_door_event(KeypadEvent eKey)
         lcdDoorlock.setCursor(5, 1);
         break;
     default:
-        doorpassword.append(eKey);
+        break;
     }
     }
-
 }
+
 void motion_detection()
 {
 
