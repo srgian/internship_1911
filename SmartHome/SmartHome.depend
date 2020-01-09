@@ -260,13 +260,13 @@
 	"LiquidCrystal_I2C.h"
 	<inttypes.h>
 
-1578309340 c:\users\oana.miron\documents\internship_1911\smarthome\inputs.h
+1578480329 c:\users\oana.miron\documents\internship_1911\smarthome\inputs.h
 	<inttypes.h>
 	"Arduino.h"
 	"Servo.h"
 	"Keypad.h"
 
-1576672459 source:c:\users\oana.miron\documents\internship_1911\smarthome\hwinputs.c
+1578480253 source:c:\users\oana.miron\documents\internship_1911\smarthome\hwinputs.c
 	<inttypes.h>
 	<Servo.h>
 	<Arduino.h>
@@ -287,15 +287,16 @@
 	<stdio.h>
 	<inttypes.h>
 
-1574765980 c:\users\oana.miron\documents\internship_1911\smarthome\lights.h
+1578310320 c:\users\oana.miron\documents\internship_1911\smarthome\lights.h
 	<inttypes.h>
 
-1576666600 source:c:\users\oana.miron\documents\internship_1911\smarthome\logic.c
+1578480688 source:c:\users\oana.miron\documents\internship_1911\smarthome\logic.c
 	"Logic.h"
 	"Lights.h"
 	"Comfort.h"
 	"Security.h"
 	"Doorlock.h"
+	"WifiConn.h"
 
 1574336742 c:\users\oana.miron\documents\internship_1911\smarthome\logic.h
 
@@ -686,7 +687,7 @@
 
 1576666568 c:\users\oana.miron\documents\internship_1911\smarthome\arduino\servotimers.h
 
-1576672358 source:c:\users\oana.miron\documents\internship_1911\smarthome\doorlock.c
+1578310889 source:c:\users\oana.miron\documents\internship_1911\smarthome\doorlock.c
 	"Doorlock.h"
 	"Outputs.h"
 	"Inputs.h"
@@ -694,14 +695,14 @@
 1576666600 c:\users\oana.miron\documents\internship_1911\smarthome\doorlock.h
 	<inttypes.h>
 
-1576666600 source:c:\users\oana.miron\documents\internship_1911\smarthome\security.c
+1578480329 source:c:\users\oana.miron\documents\internship_1911\smarthome\security.c
 	"Security.h"
 	<stdlib.h>
 	"Outputs.h"
 	"Inputs.h"
 	"WifiConn.h"
 
-1578309276 c:\users\oana.miron\documents\internship_1911\smarthome\wificonn.h
+1578315061 c:\users\oana.miron\documents\internship_1911\smarthome\wificonn.h
 	<Arduino.h>
 	<inttypes.h>
 

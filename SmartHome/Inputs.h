@@ -23,8 +23,9 @@ extern uint8_t val;
 extern uint16_t counter;
 extern uint16_t counterDl;
 extern bool motionStatus;
-extern size_t pos;
+extern size_t pospass;
 extern char *parole;
+
 extern uint8_t statusWifi;
 
 uint8_t SWDigitalRead(uint8_t pin);
@@ -37,7 +38,7 @@ void SWReadDHT(double *temp, double *humid);
 void HWReadDHT(double *temp, double *humid);
 
 
-void checkPassword();
+void RefreshListaParole();
 void keypadEvent(KeypadEvent eKey);
 void motion_detection();
 void armed();
@@ -49,7 +50,8 @@ extern Keypad keypadDl;
 
 
 
-void SecurityReloadPasswords();
+
+
 extern void infoPgSecurity();
 extern int connectToWifi();
 

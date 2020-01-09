@@ -3,11 +3,16 @@
 #include "Comfort.h"
 #include  "Security.h"
 #include "Doorlock.h"
+#include "WifiConn.h"
 
 void MainFunction()
 {
-    //LightsMainFunction();
-    //ComfortMainFunction();
+    //connToWifi();
+    // LightsMainFunction();
+    // ComfortMainFunction();
+    //connToWifi();
     SecurityMainFunction();
+
     DoorlockMainFunction();
+
 }

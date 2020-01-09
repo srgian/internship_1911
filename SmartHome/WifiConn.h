@@ -7,6 +7,7 @@
 void infoPgLights();
 void infoPgConfort();
 void connToWifi();
+void infoPgSecurity();
 
 
 #endif // WIFICONN_H

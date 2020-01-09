@@ -9,10 +9,10 @@
 void setup()
 {
     Serial.begin(9600);
-    LightsInit();
-    ComfortInit();
+    //LightsInit();
+    //ComfortInit();
     SecurityInit();
-    DoorlockInit();
+    //DoorlockInit();
 }
 
 void loop()
