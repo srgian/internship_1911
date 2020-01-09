@@ -252,7 +252,7 @@ void lcdRefresh()
 
     //set new temperature
     //joystick UP | DOWN
-    if (pinY >= 450) { //UP
+    if (pinY >= 500) { //UP
       joystick = joystick | JOYSTICK_UP ;
 
       if (newTemp == 37) {
@@ -414,16 +414,16 @@ void loop() {
   Serial.println(pinY);
 
   //joystick UP | DOWN | RIGHT | LEFT
-  if (pinY >= 450) { //UP
+  if (pinY >= 500) { //UP, was 450
     joystick = joystick | JOYSTICK_UP ;
   }
-  else if (pinY <= 350) { //DOWN
+  else if (pinY <= 350) { //DOWN, ok
     joystick = joystick | JOYSTICK_DOWN ;
   }
-  else if (pinX >= 450) { //RIGHT
+  else if (pinX >= 500) { //RIGHT, was 450
     joystick = joystick | JOYSTICK_RIGHT;
   }
-  else if (pinX <= 350) { //LEFT
+  else if (pinX <= 350) { //LEFT, ok
     joystick = joystick | JOYSTICK_LEFT;
   }
 
