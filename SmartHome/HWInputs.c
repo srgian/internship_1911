@@ -236,21 +236,24 @@ int checkpassworddl()
         lcdDoorlock.cursor_off();
         lcdDoorlock.setCursor(4, 0);
         lcdDoorlock.print("Success!");
-        delay(500);
+        delay(1000);
         if (lock == false)
         {
-            counterDl=500;
+            counterDl=200;
             myservo.write(5);//unlock the door
-
             lcdDoorlock.clear();
             lcdDoorlock.setCursor(2, 0);
-            lcdDoorlock.print("Welcome home!");
-            delay(500);
-
+            lcdDoorlock.print("Welcome Home!");
+            delay(1000);
+             lcdDoorlock.clear();
+             lcdDoorlock.noBacklight();
             lock = true;//after 5s it is locking again
+            lcdDoorlock.setCursor(2, 0);
+            lcdDoorlock.print("Entrance key:");
+            lcdDoorlock.setCursor(5, 1);
         }
-        lcdDoorlock.clear();
-        lcdDoorlock.noBacklight();
+         lcdDoorlock.clear();
+
     }
 
     else

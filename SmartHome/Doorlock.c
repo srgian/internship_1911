@@ -1,7 +1,6 @@
 #include "Doorlock.h"
 #include "Outputs.h"
 #include "Inputs.h"
-
 uint8_t doorbuzzer = 12;
 
 
@@ -24,12 +23,17 @@ void DoorlockInit()
 }
 void DoorlockMainFunction()
 {
-  keypadDl.getKey();
-  delay(10);
-  if (counterDl==0)
-  {
+    keypadDl.getKey();
+    delay(10);
+    if (counterDl==0)
+    {
         analogWrite(doorbuzzer, 255);
-  }else {
-  counterDl--;
-    analogWrite(doorbuzzer, 250);}
+    }
+    else
+    {
+        counterDl--;
+        analogWrite(doorbuzzer, 250);
+
+
+    }
 }
