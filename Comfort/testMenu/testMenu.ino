@@ -90,26 +90,26 @@ byte leftArrow[] = {
   B00001
 };
 
-byte nullArrow[] = {
+byte almostHalf[] = {
   B11111,
   B11111,
-  B11111,
-  B11111,
-  B11111,
-  B11111,
+  B10001,
+  B10001,
+  B10001,
+  B10001,
   B11111,
   B11111
 };
 
-byte leftBlank[] = {
-  B00001,
-  B00011,
-  B00101,
-  B01001,
-  B01001,
-  B00101,
-  B00011,
-  B00001
+byte almostFull[] = {
+  B11111,
+  B11111,
+  B11111,
+  B10001,
+  B10001,
+  B11111,
+  B11111,
+  B11111
 };
 
 byte rightBlank[] = {
@@ -121,6 +121,16 @@ byte rightBlank[] = {
   B10100,
   B11000,
   B10000
+};
+byte newChar1[] = {
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B11111
 };
 
 //define MENU struct
@@ -161,9 +171,9 @@ void lcdRefresh()
   lcd.createChar(2, middleUpDown);
   lcd.createChar(3, rightArrow);
   lcd.createChar(4, leftArrow);
-  lcd.createChar(5, nullArrow);
+  lcd.createChar(5, almostHalf);
   lcd.createChar(6, rightBlank);
-  lcd.createChar(7, leftBlank);
+  lcd.createChar(7, almostFull);
 
   //start the menu...
   lcd.setCursor(2, 0);
@@ -214,7 +224,7 @@ void lcdRefresh()
   if (currentMenu->title == "Alcohol level:  ") {
     //blank arrows
     lcd.setCursor(0, 0);
-    lcd.print(char(5));
+    lcd.print(char(0b11111111));
 
     //leftArrow
     lcd.setCursor(1, 0);
@@ -244,7 +254,27 @@ void lcdRefresh()
   if (currentMenu->title == "Set new temp.:  ") {
     //blank
     lcd.setCursor(0, 0);
-    lcd.print(char(5));
+    if(newTemp == 9) {
+      lcd.print(" ");
+    }
+    else if(newTemp >= 10 && newTemp <= 12) {
+      lcd.print(char(0b00101110));
+    }
+    else if(newTemp >= 13 && newTemp <= 17) {
+      lcd.print(char(0b10100001));
+    }
+    else if(newTemp >= 18 && newTemp <= 23) {
+      lcd.print(char(0b11011011));
+    }
+    else if(newTemp >= 24 && newTemp <= 29) {
+      lcd.print(char(5));
+    }
+    else if(newTemp >= 30 && newTemp <= 36) {
+      lcd.print(char(7));
+    }
+    else if(newTemp == 37) {
+      lcd.print(char(0b11111111));
+    }
 
     //leftArrow
     lcd.setCursor(1, 0);
@@ -262,7 +292,7 @@ void lcdRefresh()
         newTemp += 1;
       }
     }
-    else if (pinY <= 350) { //DOWN
+    else if (pinY <= 330) { //DOWN
       joystick = joystick | JOYSTICK_DOWN ;
 
       if (newTemp == 9) {
@@ -417,13 +447,13 @@ void loop() {
   if (pinY >= 500) { //UP, was 450
     joystick = joystick | JOYSTICK_UP ;
   }
-  else if (pinY <= 350) { //DOWN, ok
+  else if (pinY <= 330) { //DOWN, ok
     joystick = joystick | JOYSTICK_DOWN ;
   }
   else if (pinX >= 500) { //RIGHT, was 450
     joystick = joystick | JOYSTICK_RIGHT;
   }
-  else if (pinX <= 350) { //LEFT, ok
+  else if (pinX <= 330) { //LEFT, ok
     joystick = joystick | JOYSTICK_LEFT;
   }
 
