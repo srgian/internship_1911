@@ -602,7 +602,7 @@
 1578559274 c:\proiect_intership\smarthome\lights.h
 	<inttypes.h>
 
-1578572954 source:c:\proiect_intership\smarthome\logic.c
+1578919841 source:c:\proiect_intership\smarthome\logic.c
 	"Logic.h"
 	"Lights.h"
 	"Comfort.h"
@@ -641,7 +641,7 @@
 
 1578559276 c:\proiect_intership\smarthome\arduino\servotimers.h
 
-1578906505 source:c:\proiect_intership\smarthome\doorlock.c
+1578920006 source:c:\proiect_intership\smarthome\doorlock.c
 	"Doorlock.h"
 	"Outputs.h"
 	"Inputs.h"

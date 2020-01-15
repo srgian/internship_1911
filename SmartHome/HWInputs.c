@@ -19,6 +19,7 @@ char keypressed[5];
 char* pwd;//="2574364888374175";
 int cnt =4;
 int i = 0;
+uint8_t k=0;
 bool passwordvalid;
 uint8_t lock;
 uint8_t pirState = LOW;
@@ -81,51 +82,6 @@ void HWReadDHT(double *temp, double *humid)
     *humid=DHT.humidity;
 }
 
-/*void enter_house()
-{
-
-        //statuspwd = true;
-        lcdDoorlock.clear();
-        lcdDoorlock.blink_off();
-        lcdDoorlock.cursor_off();
-        lcdDoorlock.setCursor(4, 0);
-        lcdDoorlock.print("Success!");
-        delay(500);
-        if (lock == false)
-        {
-            counterDl=500;
-            myservo.write(5);//unlock the door
-
-            lcdDoorlock.clear();
-            lcdDoorlock.setCursor(2, 0);
-            lcdDoorlock.print("Welcome home!");
-            delay(500);
-
-            lock = true;//after 5s it is locking again
-        }
-        lcdDoorlock.clear();
-        lcdDoorlock.noBacklight();
-
-    else
-    {
-        statuspwd = false;
-        counterDl=0;
-        lcdDoorlock.clear();
-        lcdDoorlock.blink_off();
-        lcdDoorlock.cursor_off();
-        lcdDoorlock.setCursor(4, 0);
-        lcdDoorlock.print("Wrong!");
-        analogWrite(doorbuzzer, 250);
-        delay(1000);
-        lcdDoorlock.clear();
-        lcdDoorlock.blink();
-        lcdDoorlock.setCursor(2, 0);
-        lcdDoorlock.print("Entrance key:");
-        lcdDoorlock.setCursor(5, 1);
-    }*/
-
-
-static int j;
 int passwordevaluate(char cp[])
 {
     passwordvalid = true;
@@ -213,11 +169,11 @@ int checkpassworddl()
     int good = 0;
 
 
-    for (int i = 0; i < cnt; i++)
+    for (int k = 0; k < cnt; k++)
     {
         char cp[5] = {};
         cp[4] = 0x00;
-        memcpy(&cp, (pwd + i * 4), 4);
+        memcpy(&cp, (pwd + k * 4), 4);
         passwordevaluate(cp);
         if (passwordvalid)
         {
@@ -235,8 +191,8 @@ int checkpassworddl()
         lcdDoorlock.blink_off();
         lcdDoorlock.cursor_off();
         lcdDoorlock.setCursor(4, 0);
-        lcdDoorlock.print("Success!");
-        delay(1000);
+        lcdDoorlock.print("Successss!");
+        delay(500);
         if (lock == false)
         {
             counterDl=200;
@@ -244,16 +200,14 @@ int checkpassworddl()
             lcdDoorlock.clear();
             lcdDoorlock.setCursor(2, 0);
             lcdDoorlock.print("Welcome Home!");
-            delay(1000);
-             lcdDoorlock.clear();
-             lcdDoorlock.noBacklight();
+            delay(500);
+            lcdDoorlock.clear();
+            lcdDoorlock.noBacklight();
             lock = true;//after 5s it is locking again
-            lcdDoorlock.setCursor(2, 0);
-            lcdDoorlock.print("Entrance key:");
-            lcdDoorlock.setCursor(5, 1);
-        }
-         lcdDoorlock.clear();
 
+        }
+        lock=false;
+        lcdDoorlock.clear();
     }
 
     else
@@ -304,25 +258,23 @@ void unlock_door_event(KeypadEvent eKey)
     case '9':
 
     {
-        keypressed[i] = eKey;
-        i++;
+        keypressed[k] = eKey;
+        k++;
     }
     Serial.println(keypressed);
     break;
     case '*':
-        i = 0;
+        k = 0;
         keypressed[4] = '\0';
-        if(checkpassworddl())
+       if(checkpassworddl())
+        keypressed[i]={0};
             break;
 
-    case 'C':
-        Serial.println("Clear");
-        i = 0;
-        lcdDoorlock.clear();
-        lcdDoorlock.backlight();
-        lcdDoorlock.setCursor(2, 0);
-        lcdDoorlock.print("Entrance key:");
-        lcdDoorlock.setCursor(5, 1);
+    case'C':
+        k = 0;
+       keypressed[4] = '\0';
+           DoorlockInit();
+
         break;
     default:
         break;
@@ -351,6 +303,8 @@ void disarmed()
 {
     lcdSecurity.clear();
     lcdSecurity.setCursor(0,1 );
+    lcdSecurity.blink_off();
+    lcdSecurity.noCursor();
     lcdSecurity.print("Sistem Disarmed");
     delay(2000);
     analogWrite(buzzer, 255);
@@ -361,6 +315,8 @@ void armed()
 {
     lcdSecurity.clear();
     lcdSecurity.setCursor(0, 1);
+     lcdSecurity.blink_off();
+     lcdSecurity.noCursor();
     lcdSecurity.print("Sistem Armed");
     delay(2000);
     delay(10000);
@@ -405,11 +361,15 @@ void keypadEvent(KeypadEvent eKey)
         keypressed[4] = '\0';
         if(checkpassword())
             armed();
+
+        keypressed[i]={0};
+        break;
     case '*':
         i = 0;
         keypressed[4] = '\0';
         if(checkpassword())
             disarmed();
+          keypressed[i]={0};
         break;
     case 'C':
         Serial.println("clear");
