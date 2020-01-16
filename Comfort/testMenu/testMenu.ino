@@ -17,7 +17,7 @@
 //temperature
 #define dhtPin A2
 
-LiquidCrystal_I2C lcd(0x25, 20, 4); //lcd object
+LiquidCrystal_I2C lcd(0x27, 20, 4); //lcd object
 
 int desiredTemperature = 25, fahrenheitTemperature, newTemp = 20;
 
@@ -254,25 +254,25 @@ void lcdRefresh()
   if (currentMenu->title == "Set new temp.:  ") {
     //blank
     lcd.setCursor(0, 0);
-    if (newTemp == 9) {
+    if(newTemp == 9) {
       lcd.print(" ");
     }
-    else if (newTemp >= 10 && newTemp <= 12) {
+    else if(newTemp >= 10 && newTemp <= 12) {
       lcd.print(char(0b00101110));
     }
-    else if (newTemp >= 13 && newTemp <= 17) {
+    else if(newTemp >= 13 && newTemp <= 17) {
       lcd.print(char(0b10100001));
     }
-    else if (newTemp >= 18 && newTemp <= 23) {
+    else if(newTemp >= 18 && newTemp <= 23) {
       lcd.print(char(0b11011011));
     }
-    else if (newTemp >= 24 && newTemp <= 29) {
+    else if(newTemp >= 24 && newTemp <= 29) {
       lcd.print(char(5));
     }
-    else if (newTemp >= 30 && newTemp <= 36) {
+    else if(newTemp >= 30 && newTemp <= 36) {
       lcd.print(char(7));
     }
-    else if (newTemp == 37) {
+    else if(newTemp == 37) {
       lcd.print(char(0b11111111));
     }
 
@@ -282,7 +282,7 @@ void lcdRefresh()
 
     //set new temperature
     //joystick UP | DOWN
-    if (pinY >= 520) { //UP
+    if (pinY >= 500) { //UP
       joystick = joystick | JOYSTICK_UP ;
 
       if (newTemp == 37) {
@@ -302,23 +302,6 @@ void lcdRefresh()
         newTemp -= 1;
       }
     }
-
-    //press on joystick button to transform from Celsius to Fahrenheit (poor implementation - hidden feature)
-    if ((buttonState == LOW) && (buttonLastState == HIGH))
-    {
-      Serial.println("Button pressed");
-      new_temp.suffix = "F                                     ";
-      new_temp.sensorValue = newTemp * 1.8 + 32;
-      //new_temp.sensorValue = newTemp;
-    }
-    else if ((buttonState == HIGH) && (buttonLastState == LOW))
-    {
-      Serial.println("Button released");
-      new_temp.sensorValue = newTemp;
-      new_temp.suffix = "C                            ";
-    }
-
-    buttonLastState = buttonState;
   }
 }
 
@@ -349,7 +332,7 @@ void setup() {
   current_temp.parent = NULL;
   current_temp.nextMenu = &air_humidity;
   current_temp.prefix = "Current: ";
-  current_temp.suffix = "C                      ";
+  current_temp.suffix = "C              ";
 
   //menu for new_temp (subMenu for current_temp)
   new_temp.title = "Set new temp.:  ";
@@ -358,7 +341,7 @@ void setup() {
   new_temp.parent = &current_temp;
   new_temp.nextMenu = NULL;
   new_temp.prefix = "*";
-  new_temp.suffix = "C                    ";
+  new_temp.suffix = "C               ";
 
   //menu for air_humidity
   air_humidity.title = "Humidity:       ";
@@ -461,7 +444,7 @@ void loop() {
   Serial.println(pinY);
 
   //joystick UP | DOWN | RIGHT | LEFT
-  if (pinY >= 520) { //UP, was 450
+  if (pinY >= 500) { //UP, was 450
     joystick = joystick | JOYSTICK_UP ;
   }
   else if (pinY <= 330) { //DOWN, ok
@@ -516,23 +499,4 @@ void loop() {
   oldJoystick = joystick;
 
   lcdRefresh();
-}
-
-void Fahrenheit() {
-  //press on joystick button to transform from Celsius to Fahrenheit (poor implementation - hidden feature)
-  if ((buttonState == LOW) && (buttonLastState == HIGH))
-  {
-    Serial.println("Button pressed");
-    new_temp.suffix = "F                                     ";
-    new_temp.sensorValue = newTemp * 1.8 + 32;
-    //new_temp.sensorValue = newTemp;
-  }
-  else if ((buttonState == HIGH) && (buttonLastState == LOW))
-  {
-    Serial.println("Button released");
-    new_temp.sensorValue = newTemp;
-    new_temp.suffix = "C                            ";
-  }
-
-  buttonLastState = buttonState;
 }
