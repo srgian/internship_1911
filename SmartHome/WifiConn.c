@@ -1,30 +1,50 @@
 #include "WifiConn.h"
 #include <Arduino.h>
+#include <WString.h>
 
 uint8_t connectWifi = 0;
 uint8_t requestData = 0;
 uint8_t statusWifi = 0;
-uint8_t continuee = 1;
-uint8_t stopp = 0;
 
 char *parole=NULL;
-char *lumini;
-char *confort;
+char *lumini=NULL;
+char *confort=NULL;
 
 size_t pospass = 0;
-size_t pos = 0;
+size_t poslgh = 0;
+size_t poscnf = 0;
 
 char netwpass[] = "%samsung%xena8583%1";//"%3" reprezinta nr pg
 char pgLights[] = "%www.bizkit.eu%GET /~arobs-i1911/cfg/lights.php";
 char pgConfort[] = "%www.bizkit.eu%GET /~arobs-i1911/cfg/confort.php";
 char pgSecurity[] = "%www.bizkit.eu%GET /~arobs-i1911/cfg/security.php";
+char pgToUpload[] = "%bizkit.eu%POST /~arobs-i1911/cfg/status.php HTTP/1.1";
 
 
 uint8_t stopInit = 0;
 
+String data = "";
+String d = "%";
+
+void uploadData() {
+
+  String data = d + tempsts + d + alarmasts /*+ d + lightssts*/;
+
+  uint8_t raspuns;
+  Serial.print(pgToUpload);
+
+  for (;;) {
+    while (!Serial.available()) {}
+    raspuns = Serial.read();
+    if (raspuns == 1) {
+      break;
+    }
+    Serial.print(data);
+  }
+}
+
 void infoPgSecurity()
 {
-
     Serial.print(pgSecurity);
 
     int c = 0;
@@ -59,7 +79,6 @@ void infoPgSecurity()
 
 void infoPgLights()
 {
-
     Serial.print(pgLights);
 
     int c = 0;
@@ -71,27 +90,29 @@ void infoPgLights()
         c = (char)Serial.read();
         if (c == -1)
             continue;   // no input
-        if (pos < sizeof dataPgLights - 1)
+        if (poslgh < sizeof dataPgLights - 1)
         {
-            dataPgLights[pos++] = c;
+            dataPgLights[poslgh++] = c;
         }
         if (c == '%')           // end of string
         {
             break;
         }
     }
-    if (lumini == NULL)
+    if (lumini != NULL)
     {
         free(lumini);
     }
-    lumini=(char*)malloc(pos*sizeof(char));
-    memcpy(lumini, dataPgLights, pos);
-    pos = 0;
+    lumini=(char*)malloc(poslgh*sizeof(char)+1);
+    if (lumini != NULL)
+    {
+        memcpy(lumini, dataPgLights, poslgh);
+        *(lumini+poslgh)='\0';
+    }
 }
 
 void infoPgConfort()
 {
-
     Serial.print(pgConfort);
 
     int c = 0;
@@ -103,25 +124,28 @@ void infoPgConfort()
         c = (char)Serial.read();
         if (c == -1)
             continue;   // no input
-        if (pos < sizeof dataPgConfort - 1)
+        if (poscnf < sizeof dataPgConfort - 1)
         {
-            dataPgConfort[pos++] = c;
+            dataPgConfort[poscnf++] = c;
         }
         if (c == '%')           // end of string
         {
             break;
         }
     }
-    if (confort == NULL)
+    if (confort != NULL)
     {
         free(confort);
     }
-    confort=(char*)malloc(pos*sizeof(char));
-    memcpy(confort, dataPgConfort, pos);
-    pos = 0;
+    confort=(char*)malloc(poscnf*sizeof(char)+1);
+    if (confort != NULL)
+    {
+        memcpy(confort, dataPgConfort, poscnf);
+        *(confort+poscnf)='\0';
+    }
 }
 
-void connectToWifi()
+void connToWifi()
 {
 
     for (;;)
@@ -142,24 +166,10 @@ void connectToWifi()
 
     while (!Serial.available()) {} //se asteapta raspunsul conectarii
     statusWifi = Serial.read();
-    /*if (statusWifi == 1) {
+    if (statusWifi == 1) {
       //return 1;//Conectare Reusita!
     }
     if (statusWifi == 2) {
       //return 2;//Time Out!
-    }*/
-}
-
-void connToWifi()  /////////////////////////////////////////////LOOP//////////////////////////////////////////////
-{
-
-    connectToWifi();
-    if (statusWifi == 1)  //daca este conectat urmeaza cererea de info de pe dif pg
-    {
-        Serial.print("Wifi conectat!");
-    }
-    else
-    {
-        Serial.println("Conectare nereusita!");
     }
 }

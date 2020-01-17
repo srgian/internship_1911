@@ -59,6 +59,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Logic.h" />
+		<Unit filename="Menu.h" />
 		<Unit filename="Outputs.h" />
 		<Unit filename="SWInputs.c">
 			<Option compilerVar="CC" />

@@ -5,6 +5,7 @@
 
 #include <Arduino.h>
 #include "LiquidCrystal_I2C.h"
+#include "dht.h"
 #define Print HWPrint
 #define DPrint HWDPrint
 #define digitalPinWrite HWDigitalWrite
@@ -40,4 +41,10 @@ void SWDPrint(double val);
 
 extern LiquidCrystal_I2C lcdSecurity;
 extern LiquidCrystal_I2C lcdDoorlock;
+extern LiquidCrystal_I2C lcdComfort;
+extern dht DHT;
+
+
+
+
 #endif // HWOUTPUTS_H

@@ -7,12 +7,12 @@
 
 void MainFunction()
 {
-    //connToWifi();
+
     // LightsMainFunction();
-    // ComfortMainFunction();
-    //connToWifi();
+
+
     DoorlockMainFunction();
     SecurityMainFunction();
-
+      ComfortMainFunction();
 
 }
